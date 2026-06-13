@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anita C Odogwu | Poetry</title>
-    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://googleapis.com" rel="stylesheet">
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
@@ -47,11 +47,28 @@
             transition: all 0.2s ease; margin: 0 15px; flex-shrink: 0;
         }
         .arrow:hover { background: #ffffff; color: #2c1a30; transform: scale(1.1); }
+        
+        /* Premium Guestbook Custom Boxes */
         .comments-section {
             width: 100%; max-width: 750px; background: rgba(255, 255, 255, 0.95); padding: 40px;
             border-radius: 24px; box-shadow: 0 15px 35px rgba(0,0,0,0.15); margin-bottom: 40px;
         }
         .comments-section h3 { font-family: 'Playfair Display', serif; margin-bottom: 20px; color: #4a2333; border-left: 4px solid #7a3b5c; padding-left: 12px; }
+        
+        .guestbook-form { display: flex; flex-direction: column; gap: 15px; }
+        .guestbook-input, .guestbook-textarea {
+            width: 100%; padding: 12px 18px; border-radius: 12px; border: 1px solid #c3cfe2;
+            font-family: 'Poppins', sans-serif; font-size: 1rem; color: #2c1a30; background: #fffcf7;
+            transition: border 0.3s ease;
+        }
+        .guestbook-input:focus, .guestbook-textarea:focus { border-color: #7a3b5c; outline: none; }
+        .guestbook-textarea { height: 120px; resize: none; }
+        .guestbook-btn {
+            background: #2c1a30; color: white; border: none; padding: 12px 25px; border-radius: 12px;
+            font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease; align-self: flex-start;
+        }
+        .guestbook-btn:hover { background: #7a3b5c; transform: translateY(-2px); }
+
         @media (max-width: 650px) {
             .carousel-wrapper { flex-wrap: wrap; }
             .arrow { order: 2; margin: 20px 10px 0 10px; }
@@ -152,6 +169,7 @@ It’s not for themselves,
 Or the current generation,
 But for the future ones.
 The ones that can change tomorrow.
+The ones that can change tomorrow.
 But only if they try.
 
 But
@@ -211,12 +229,16 @@ And fly into the sky, to learn new things</p>
         <button class="arrow" id="nextBtn">❯</button>
     </div>
 
-    <!-- Free Account-Free Comment System Layout -->
+    <!-- 100% Custom Form Guestbook Box -->
     <div class="comments-section">
         <h3>Reader Guestbook & Comments</h3>
-        <div class="commentbox"></div>
-        <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
-        <script>commentBox('5671183305408512-proj')</script>
+        <!-- Replace YOUR_EMAIL_HERE with your real email address -->
+        <form class="guestbook-form" action="https://formspree.io" method="POST">
+            <input type="text" name="name" class="guestbook-input" placeholder="Your Name" required>
+            <input type="email" name="_replyto" class="guestbook-input" placeholder="Your Email Address (optional)">
+            <textarea name="message" class="guestbook-textarea" placeholder="Leave a review or comment here..." required></textarea>
+            <button type="submit" class="guestbook-btn">Submit Comment</button>
+        </form>
     </div>
 
     <script>
