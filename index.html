@@ -47,31 +47,22 @@
             transition: all 0.2s ease; margin: 0 15px; flex-shrink: 0;
         }
         .arrow:hover { background: #ffffff; color: #2c1a30; transform: scale(1.1); }
-        
-        .interactive-sections {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 30px; width: 100%; max-width: 900px; margin-bottom: 40px;
-        }
-        .action-box {
-            background: rgba(255, 255, 255, 0.95); padding: 30px; border-radius: 24px; box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-        }
+        .interactive-sections { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; width: 100%; max-width: 900px; margin-bottom: 40px; }
+        .action-box { background: rgba(255, 255, 255, 0.95); padding: 30px; border-radius: 24px; box-shadow: 0 15px 35px rgba(0,0,0,0.15); }
         .action-box h3 { font-family: 'Playfair Display', serif; margin-bottom: 15px; color: #4a2333; border-left: 4px solid #7a3b5c; padding-left: 12px; }
-        
         .box-form { display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; }
         .box-textarea {
             width: 100%; padding: 12px 15px; border-radius: 12px; border: 1px solid #c3cfe2;
-            font-family: 'Poppins', sans-serif; font-size: 0.95rem; color: #2c1a30; background: #fffcf7;
-            height: 110px; resize: none;
+            font-family: 'Poppins', sans-serif; font-size: 0.95rem; color: #2c1a30; background: #fffcf7; height: 110px; resize: none;
         }
         .box-btn {
             background: #2c1a30; color: white; border: none; padding: 10px 20px; border-radius: 12px;
             font-size: 0.95rem; font-weight: 600; cursor: pointer; align-self: flex-start; transition: background 0.2s;
         }
         .box-btn:hover { background: #7a3b5c; }
-        
         .list-display { display: flex; flex-direction: column; gap: 12px; max-height: 250px; overflow-y: auto; }
         .display-item { background: #fffcf7; border: 1px solid #f7d6c8; padding: 12px; border-radius: 12px; }
         .item-text { color: #2b2024; font-size: 0.95rem; line-height: 1.5; font-style: italic; }
-
         @media (max-width: 768px) {
             .interactive-sections { grid-template-columns: 1fr; }
             .carousel-wrapper { flex-wrap: wrap; }
@@ -88,6 +79,8 @@
     <div class="carousel-wrapper">
         <button class="arrow" id="prevBtn">❮</button>
         <div class="carousel-container">
+
+                        <!-- Poem 1 -->
             <div class="poem-card active">
                 <h2 class="poem-title">Black? British? Both?</h2>
                 <p class="poem-body">Black, British, or both? 
@@ -138,98 +131,71 @@ I guess I will never know…
 Being half is not enough,
 And it will never be that much.</p>
             </div>
+            <!-- Poem 2 -->
             <div class="poem-card">
                 <h2 class="poem-title">My History Is My Pride</h2>
                 <p class="poem-body">Home isn’t just where you live.
 It is your story.
 It is your history.
-
 And not everyone has the courage,
 To step up for what is right.
 We talk about it,
 We complain.
-
 But
-
 We all know something is wrong.
 Just most of us know what is wrong.
 Only some of us know what to do.
 Merely a few of us know how to do it.
 But only certain ones of us…
 Actually take a step.
-
 But
 Only a few undeniable souls.
 ‘Say’ that something should be done,
 And then ‘do’ it.
 Only a few undeniable souls…
 Change the world.
-
 But
-
 It’s not for themselves,
 Or the current generation,
 But for the future ones.
 The ones that can change tomorrow.
 But only if they try.
-
 But
-
 We need those certain ones.
 Those undeniable souls.
-
 And that can be you.
 But
 Only if you choose so.</p>
             </div>
-                        <div class="poem-card">
-                <h2 class="poem-title">Then And Now</h2>
-                <p class="poem-body">A place beyond,
-A place I wasn't so fond of.
- 
-The air felt new,
-my heart renewed,
-The nasty holes that had been eaten through,
-By fear, doubt and worry, though reasons were few.
- 
-I had left my home,
-My mother land,
-To a new place called England.
- 
-I never knew I'd be here,
-In a place where,
-There's be so much,
-That I felt rushed.
- 
-I felt inferior
-I felt different...
-I wasn't inferior
-I was different. 
- 
-And now.
-I was different too,
-Not on the outside,
-On the inside and through.
-But you learnt to adapt
-And suddenly it wasn't so bad.
-It was time to write a new chapter.
-And turn a new page.
- 
-And now in a new age,
-I would leave my cage,
-And spread my wings
-And fly into the sky, to learn new things</p>
-            </div>
+
+                        <!-- Poem 3 -->
             <div class="poem-card">
                 <h2 class="poem-title">Then And Now</h2>
+                <p class="poem-body">A place beyond, A place I wasn't so fond of.
+The air felt new, my heart renewed,
+The nasty holes that had been eaten through,
+By fear, doubt and worry, though reasons were few.
+I had left my home, My mother land, To a new place called England.
+I never knew I'd be here, In a place where,
+There's be so much, That I felt rushed.
+I felt inferior, I felt different...
+I wasn't inferior, I was different. 
+And now. I was different too, Not on the outside,
+On the inside and through.
+But you learnt to adapt, And suddenly it wasn't so bad.
+It was time to write a new chapter, And turn a new page.
+And now in a new age, I would leave my cage,
+And spread my wings, And fly into the sky, to learn new things</p>
+            </div>
+            <!-- Poem 4 -->
+            <div class="poem-card">
+                <h2 class="poem-title">Then And Now Extra</h2>
                 <p class="poem-body">|New Chapter, New Space|</p>
             </div>
         </div>
         <button class="arrow" id="nextBtn">❯</button>
     </div>
-
     <div class="interactive-sections">
-        <!-- Box 1: Smart Comment Box that sorts comments by poem -->
         <div class="action-box">
             <h3 id="commentBoxTitle">Comments for current poem</h3>
             <div class="box-form">
@@ -238,8 +204,6 @@ And fly into the sky, to learn new things</p>
             </div>
             <div class="list-display" id="commentsDisplay"></div>
         </div>
-
-        <!-- Box 2: Poetry Suggestions -->
         <div class="action-box">
             <h3>Poem Request Box</h3>
             <div class="box-form">
@@ -249,7 +213,6 @@ And fly into the sky, to learn new things</p>
             <div class="list-display" id="requestsDisplay"></div>
         </div>
     </div>
-
     <script>
         const cards = document.querySelectorAll('.poem-card');
         const commentBoxTitle = document.getElementById('commentBoxTitle');
@@ -259,64 +222,47 @@ And fly into the sky, to learn new things</p>
         const rTopic = document.getElementById('rTopic');
         const postRequestBtn = document.getElementById('postRequestBtn');
         const requestsDisplay = document.getElementById('requestsDisplay');
-        
         let current = 0;
-
-        // Smart database sorted by poem title
         let savedCommentsByPoem = JSON.parse(localStorage.getItem('poetry_comments_by_poem')) || {};
-
         function getPoemKey() {
             const titleElement = cards[current].querySelector('.poem-title');
             return titleElement ? titleElement.innerText.trim() : 'General';
         }
-
         function renderComments() {
             const currentPoemKey = getPoemKey();
             commentBoxTitle.innerText = `Comments for: "${currentPoemKey}"`;
             commentsDisplay.innerHTML = '';
-            
             const currentComments = savedCommentsByPoem[currentPoemKey] || [];
             if(currentComments.length === 0) {
                 commentsDisplay.innerHTML = '<div class="item-text" style="opacity: 0.5;">No comments yet for this specific poem. Be the first!</div>';
                 return;
             }
-            
             currentComments.forEach(c => {
                 const b = document.createElement('div'); b.className = 'display-item';
                 b.innerHTML = `<div class="item-text">💬 "${c.text}"</div>`;
                 commentsDisplay.appendChild(b);
             });
         }
-
         function showCard(index) {
             cards.forEach(card => card.className = 'poem-card');
             if (index < 0) current = cards.length - 1;
             else if (index >= cards.length) current = 0;
             else current = index;
-            
             cards[current].classList.add('active');
             let prevIndex = current - 1 < 0 ? cards.length - 1 : current - 1;
             cards[prevIndex].classList.add('prev');
-            
-            // Instantly load comments for this specific poem card!
             renderComments();
         }
-
         document.getElementById('prevBtn').addEventListener('click', () => showCard(current - 1));
         document.getElementById('nextBtn').addEventListener('click', () => showCard(current + 1));
-
         postCommentBtn.addEventListener('click', () => {
             if(!vMsg.value.trim()) return;
             const currentPoemKey = getPoemKey();
             if(!savedCommentsByPoem[currentPoemKey]) savedCommentsByPoem[currentPoemKey] = [];
-            
             savedCommentsByPoem[currentPoemKey].unshift({ text: vMsg.value });
             localStorage.setItem('poetry_comments_by_poem', JSON.stringify(savedCommentsByPoem));
-            renderComments(); 
-            vMsg.value = '';
+            renderComments(); vMsg.value = '';
         });
-
-        // Request Logic
         let savedRequests = JSON.parse(localStorage.getItem('poetry_requests')) || [{ text: "Write a poem about a bird leaving its cage." }];
         function renderRequests() {
             requestsDisplay.innerHTML = '';
@@ -332,11 +278,7 @@ And fly into the sky, to learn new things</p>
             localStorage.setItem('poetry_requests', JSON.stringify(savedRequests));
             renderRequests(); rTopic.value = '';
         });
-
-        // Start page up smoothly
-        showCard(0);
-        renderRequests();
+        showCard(0); renderRequests();
     </script>
 </body>
 </html>
-
