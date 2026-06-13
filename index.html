@@ -1,187 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anita C Odogwu | Poetry</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com" rel="stylesheet">
-    <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #2c1a30 0%, #7a3b5c 40%, #d46a6a 80%, #f7d6c8 100%);
-            min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 40px 20px; color: #2c1a30;
-        }
-        header { 
-            text-align: center; margin-bottom: 30px; background: rgba(255, 255, 255, 0.15);
-            padding: 20px 40px; border-radius: 30px; backdrop-filter: blur(8px); box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-        }
-        header h1 { font-family: 'Playfair Display', serif; font-size: 3rem; color: #ffffff; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
-        header p { font-size: 1.2rem; color: #f7d6c8; font-style: italic; }
-        .carousel-wrapper { display: flex; align-items: center; justify-content: center; width: 100%; max-width: 750px; margin-bottom: 40px; }
-        .carousel-container {
-            position: relative; width: 100%; height: 750px; overflow: hidden; border-radius: 24px;
-            box-shadow: 0 20px 45px rgba(0,0,0,0.25); background: #fffcf7; border: 1px solid rgba(255,255,255,0.5);
-        }
-        .poem-card {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%; padding: 40px; display: flex; flex-direction: column;
-            opacity: 0; transform: translateX(100%); transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
-        }
-        .poem-card.active { opacity: 1; transform: translateX(0); }
-        .poem-card.prev { transform: translateX(-100%); }
-        .poem-title {
-            font-family: 'Playfair Display', serif; font-size: 2rem; color: #4a2333; margin-bottom: 20px;
-            text-align: center; border-bottom: 2px dashed #d46a6a; padding-bottom: 10px;
-        }
-        .poem-body {
-            font-family: 'Playfair Display', serif; font-size: 1.2rem; line-height: 1.8; color: #2b2024;
-            white-space: pre-line; text-align: center; overflow-y: auto; padding-right: 5px;
-        }
-        .poem-body::-webkit-scrollbar { width: 5px; }
-        .poem-body::-webkit-scrollbar-thumb { background-color: #d46a6a; border-radius: 10px; }
-        .arrow {
-            background: #2c1a30; border: none; color: #ffffff; width: 55px; height: 55px; border-radius: 50%; font-size: 1.6rem;
-            cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-            transition: all 0.2s ease; margin: 0 15px; flex-shrink: 0;
-        }
-        .arrow:hover { background: #ffffff; color: #2c1a30; transform: scale(1.1); }
-        
-        /* Premium Guestbook Custom Boxes */
-        .comments-section {
-            width: 100%; max-width: 750px; background: rgba(255, 255, 255, 0.95); padding: 40px;
-            border-radius: 24px; box-shadow: 0 15px 35px rgba(0,0,0,0.15); margin-bottom: 40px;
-        }
-        .comments-section h3 { font-family: 'Playfair Display', serif; margin-bottom: 20px; color: #4a2333; border-left: 4px solid #7a3b5c; padding-left: 12px; }
-        
-        .guestbook-form { display: flex; flex-direction: column; gap: 15px; }
-        .guestbook-input, .guestbook-textarea {
-            width: 100%; padding: 12px 18px; border-radius: 12px; border: 1px solid #c3cfe2;
-            font-family: 'Poppins', sans-serif; font-size: 1rem; color: #2c1a30; background: #fffcf7;
-            transition: border 0.3s ease;
-        }
-        .guestbook-input:focus, .guestbook-textarea:focus { border-color: #7a3b5c; outline: none; }
-        .guestbook-textarea { height: 120px; resize: none; }
-        .guestbook-btn {
-            background: #2c1a30; color: white; border: none; padding: 12px 25px; border-radius: 12px;
-            font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease; align-self: flex-start;
-        }
-        .guestbook-btn:hover { background: #7a3b5c; transform: translateY(-2px); }
-
-        @media (max-width: 650px) {
-            .carousel-wrapper { flex-wrap: wrap; }
-            .arrow { order: 2; margin: 20px 10px 0 10px; }
-            .carousel-container { order: 1; height: 750px; }
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Anita C Odogwu</h1>
-        <p>Poetry Collection</p>
-    </header>
-    <div class="carousel-wrapper">
-        <button class="arrow" id="prevBtn">❮</button>
-        <div class="carousel-container">
-            <!-- Card 1 -->
-            <div class="poem-card active">
-                <h2 class="poem-title">Black? British? Both?</h2>
-                <p class="poem-body">Black, British, or both? 
-I guess I will never know…
-Being half is not enough,
-And it will never be that much.
-Why
-Why
-Why can’t I be like everyone else,
-‘Where are you from?’ is a bad question
-‘What race are you?’ is even worse,
-Answering those will be like hell.
-Why
-Why
-Why can’t I just be one?
-If you ask; ‘Am I black?’
-I’ll say no,
-If you ask; ‘Am I white?’, it’ll be the same
-Why
-Why
-Why is it so complicated?
-Is it that I’m cursed?
-Or am I blessed?
-Just having to pick one is hard.
-Why
-Why
-Why
-Why can’t I be like everyone else?
-To know that there was one place I truly belonged
-To be able to find peace, not be discriminated or judged
-Is a miracle for people like me.
-Why
-Why
-Why can’t I look the same,
-Hair, Skin and face,
-Why one big long name?
-I feel like a string being wound up along the finger.
-Why
-Why
-Why can’t I be like everyone else,
-‘Where are you from?’ is a bad question
-‘What race are you?’ is even worse,
-Answering those will be like hell.
-Why
-Why
-Black, British, or both? 
-I guess I will never know…
-Being half is not enough,
-And it will never be that much.</p>
-            </div>
-            <!-- Card 2 -->
-            <div class="poem-card">
-                <h2 class="poem-title">My History Is My Pride</h2>
-                <p class="poem-body">Home isn’t just where you live.
-It is your story.
-It is your history.
-
-And not everyone has the courage,
-To step up for what is right.
-We talk about it,
-We complain.
-
-But
-
-We all know something is wrong.
-Just most of us know what is wrong.
-Only some of us know what to do.
-Merely a few of us know how to do it.
-But only certain ones of us…
-Actually take a step.
-
-But
-Only a few undeniable souls.
-‘Say’ that something should be done,
-And then ‘do’ it.
-Only a few undeniable souls…
-Change the world.
-
-But
-
-It’s not for themselves,
-Or the current generation,
-But for the future ones.
-The ones that can change tomorrow.
-The ones that can change tomorrow.
-But only if they try.
-
-But
-
-We need those certain ones.
-Those undeniable souls.
-
-And that can be you.
-But
-Only if you choose so.</p>
-            </div>
-            <!-- Card 3 -->
             <div class="poem-card">
                 <h2 class="poem-title">Then And Now</h2>
                 <p class="poem-body">A place beyond,
@@ -220,7 +36,6 @@ I would leave my cage,
 And spread my wings
 And fly into the sky, to learn new things</p>
             </div>
-            <!-- Card 4 -->
             <div class="poem-card">
                 <h2 class="poem-title">Then And Now</h2>
                 <p class="poem-body">|New Chapter, New Space|</p>
@@ -229,19 +44,35 @@ And fly into the sky, to learn new things</p>
         <button class="arrow" id="nextBtn">❯</button>
     </div>
 
-    <!-- 100% Custom Form Guestbook Box -->
-    <div class="comments-section">
-        <h3>Reader Guestbook & Comments</h3>
-        <!-- Replace YOUR_EMAIL_HERE with your real email address -->
-        <form class="guestbook-form" action="https://formspree.io" method="POST">
-            <input type="text" name="name" class="guestbook-input" placeholder="Your Name" required>
-            <input type="email" name="_replyto" class="guestbook-input" placeholder="Your Email Address (optional)">
-            <textarea name="message" class="guestbook-textarea" placeholder="Leave a review or comment here..." required></textarea>
-            <button type="submit" class="guestbook-btn">Submit Comment</button>
-        </form>
+    <!-- Side-by-Side Guestbook and Request Boxes -->
+    <div class="interactive-sections">
+        
+        <!-- Box 1: Guestbook Comments -->
+        <div class="action-box">
+            <h3>Reader Guestbook</h3>
+            <div class="box-form">
+                <input type="text" id="vName" class="box-input" placeholder="Your Name" required>
+                <textarea id="vMsg" class="box-textarea" placeholder="Type your comment here..." required></textarea>
+                <button id="postCommentBtn" class="box-btn">Post Comment</button>
+            </div>
+            <div class="list-display" id="commentsDisplay"></div>
+        </div>
+
+        <!-- Box 2: Poetry Suggestions -->
+        <div class="action-box">
+            <h3>Poem Request Box</h3>
+            <div class="box-form">
+                <input type="text" id="rName" class="box-input" placeholder="Your Name" required>
+                <textarea id="rTopic" class="box-textarea" placeholder="What should my next poem be about?..." required></textarea>
+                <button id="postRequestBtn" class="box-btn">Send Request</button>
+            </div>
+            <div class="list-display" id="requestsDisplay"></div>
+        </div>
+
     </div>
 
     <script>
+        // Carousel System
         const cards = document.querySelectorAll('.poem-card');
         let current = 0;
         function showCard(index) {
@@ -255,6 +86,58 @@ And fly into the sky, to learn new things</p>
         }
         document.getElementById('prevBtn').addEventListener('click', () => showCard(current - 1));
         document.getElementById('nextBtn').addEventListener('click', () => showCard(current + 1));
+
+        // Guestbook Code
+        const vName = document.getElementById('vName');
+        const vMsg = document.getElementById('vMsg');
+        const postCommentBtn = document.getElementById('postCommentBtn');
+        const commentsDisplay = document.getElementById('commentsDisplay');
+
+        let savedComments = JSON.parse(localStorage.getItem('poetry_comments')) || [
+            { name: "First Reader", text: "Your poems are absolutely powerful, Anita!" }
+        ];
+
+        function renderComments() {
+            commentsDisplay.innerHTML = '';
+            savedComments.forEach(c => {
+                const b = document.createElement('div'); b.className = 'display-item';
+                b.innerHTML = `<div class="item-header">✍️ ${c.name}</div><div class="item-text">${c.text}</div>`;
+                commentsDisplay.appendChild(b);
+            });
+        }
+        postCommentBtn.addEventListener('click', () => {
+            if(!vName.value.trim() || !vMsg.value.trim()) return;
+            savedComments.unshift({ name: vName.value, text: vMsg.value });
+            localStorage.setItem('poetry_comments', JSON.stringify(savedComments));
+            renderComments(); vName.value = ''; vMsg.value = '';
+        });
+        renderComments();
+
+        // Poem Request Code
+        const rName = document.getElementById('rName');
+        const rTopic = document.getElementById('rTopic');
+        const postRequestBtn = document.getElementById('postRequestBtn');
+        const requestsDisplay = document.getElementById('requestsDisplay');
+
+        let savedRequests = JSON.parse(localStorage.getItem('poetry_requests')) || [
+            { name: "Inspiration Bot", text: "Write a poem about the sea calling you home." }
+        ];
+
+        function renderRequests() {
+            requestsDisplay.innerHTML = '';
+            savedRequests.forEach(r => {
+                const b = document.createElement('div'); b.className = 'display-item';
+                b.innerHTML = `<div class="item-header">💡 Idea from ${r.name}</div><div class="item-text">${r.text}</div>`;
+                requestsDisplay.appendChild(b);
+            });
+        }
+        postRequestBtn.addEventListener('click', () => {
+            if(!rName.value.trim() || !rTopic.value.trim()) return;
+            savedRequests.unshift({ name: rName.value, text: rTopic.value });
+            localStorage.setItem('poetry_requests', JSON.stringify(savedRequests));
+            renderRequests(); rName.value = ''; rTopic.value = '';
+        });
+        renderRequests();
     </script>
 </body>
 </html>
