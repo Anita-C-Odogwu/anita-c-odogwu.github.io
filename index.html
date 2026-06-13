@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anita C Odogwu | Windrush One Poetry</title>
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4ecf7 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #333;
+            padding: 40px 20px;
+        }
+        header { text-align: center; margin-bottom: 40px; }
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: #1a2a3a;
+            margin-bottom: 10px;
+        }
+        header p { font-size: 1.2rem; color: #5a6a85; font-style: italic; }
+
+        /* Carousel Layout */
+        .carousel-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 700px;
+            margin-bottom: 60px;
+        }
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            background: #ffffff;
+        }
+        .poem-card {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+        }
+        .poem-card.active { opacity: 1; transform: translateX(0); }
+        .poem-card.prev { transform: translateX(-100%); }
+
+        /* Poem Text Style */
+        .poem-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #1a2a3a;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .poem-body {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: #4a4a4a;
+            white-space: pre-line;
+            text-align: center;
+            overflow-y: auto;
+        }
+
+        /* Pretty Arrow Buttons */
+        .arrow {
+            background: #ffffff;
+            border: none;
+            color: #1a2a3a;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            font-size: 1.6rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            margin: 0 15px;
+            flex-shrink: 0;
+        }
+        .arrow:hover { background: #1a2a3a; color: #ffffff; transform: scale(1.1); }
+
+        /* Comments Section Box */
+        .comments-section {
+            width: 100%;
+            max-width: 700px;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+        }
+        .comments-section h3 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 20px;
+            color: #1a2a3a;
+        }
+
+        @media (max-width: 600px) {
+            .carousel-wrapper { flex-wrap: wrap; }
+            .arrow { order: 2; margin: 20px 10px 0 10px; }
+            .carousel-container { order: 1; height: 450px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Anita C Odogwu</h1>
+        <p>Windrush One Poetry Collection</p>
+    </header>
+
+    <div class="carousel-wrapper">
+        <button class="arrow" id="prevBtn">&#10094;</button>
+        
+        <div class="carousel-container">
+            <!-- Card 1 -->
+            <div class="poem-card active">
+                <h2 class="poem-title">Windrush Horizons</h2>
+                <p class="poem-body">Change this text to your first poem.
+                Type your beautiful lines here.
+                
+                The layout keeps everything perfectly centered.</p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="poem-card">
+                <h2 class="poem-title">The Crossing</h2>
+                <p class="poem-body">This is your second poem card.
+                The arrows will glide cleanly to this spot.
+                
+                Add your verses here.</p>
+            </div>
+        </div>
+
+        <button class="arrow" id="nextBtn">&#10095;</button>
+    </div>
+
+    <!-- Free Comment System using your repository details -->
+    <div class="comments-section">
+        <h3>Reader Guestbook & Comments</h3>
+        <script src="https://utteranc.es"
+                repo="Anita-C-Odogwu/Anita-C-Odogwu.github.io"
+                issue-term="pathname"
+                theme="github-light"
+                crossorigin="anonymous"
+                async>
+        </script>
+    </div>
+
+    <script>
+        const cards = document.querySelectorAll('.poem-card');
+        let current = 0;
+
+        function showCard(index) {
+            cards.forEach(card => card.className = 'poem-card');
+            if (index < 0) current = cards.length - 1;
+            else if (index >= cards.length) current = 0;
+            else current = index;
+
+            cards[current].classList.add('active');
+            let prevIndex = current - 1 < 0 ? cards.length - 1 : current - 1;
+            cards[prevIndex].classList.add('prev');
+        }
+
+        document.getElementById('prevBtn').addEventListener('click', () => showCard(current - 1));
+        document.getElementById('nextBtn').addEventListener('click', () => showCard(current + 1));
+    </script>
+</body>
+</html>
