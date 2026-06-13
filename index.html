@@ -44,27 +44,25 @@ And fly into the sky, to learn new things</p>
         <button class="arrow" id="nextBtn">❯</button>
     </div>
 
-    <!-- Side-by-Side Guestbook and Request Boxes -->
+    <!-- Clean, Anonymous Guestbook and Request Layout -->
     <div class="interactive-sections">
         
-        <!-- Box 1: Guestbook Comments -->
+        <!-- Box 1: Anonymous Guestbook -->
         <div class="action-box">
             <h3>Reader Guestbook</h3>
             <div class="box-form">
-                <input type="text" id="vName" class="box-input" placeholder="Your Name" required>
-                <textarea id="vMsg" class="box-textarea" placeholder="Type your comment here..." required></textarea>
+                <textarea id="vMsg" class="box-textarea" placeholder="Type an anonymous comment here..." required></textarea>
                 <button id="postCommentBtn" class="box-btn">Post Comment</button>
             </div>
             <div class="list-display" id="commentsDisplay"></div>
         </div>
 
-        <!-- Box 2: Poetry Suggestions -->
+        <!-- Box 2: Anonymous Poetry Suggestions -->
         <div class="action-box">
             <h3>Poem Request Box</h3>
             <div class="box-form">
-                <input type="text" id="rName" class="box-input" placeholder="Your Name" required>
-                <textarea id="rTopic" class="box-textarea" placeholder="What should my next poem be about?..." required></textarea>
-                <button id="postRequestBtn" class="box-btn">Send Request</button>
+                <textarea id="rTopic" class="box-textarea" placeholder="What should my next poem be about? (Anonymous)..." required></textarea>
+                <button id="postRequestBtn" class="box-btn">Send Idea</button>
             </div>
             <div class="list-display" id="requestsDisplay"></div>
         </div>
@@ -72,7 +70,7 @@ And fly into the sky, to learn new things</p>
     </div>
 
     <script>
-        // Carousel System
+        // Carousel Navigation Script
         const cards = document.querySelectorAll('.poem-card');
         let current = 0;
         function showCard(index) {
@@ -87,55 +85,53 @@ And fly into the sky, to learn new things</p>
         document.getElementById('prevBtn').addEventListener('click', () => showCard(current - 1));
         document.getElementById('nextBtn').addEventListener('click', () => showCard(current + 1));
 
-        // Guestbook Code
-        const vName = document.getElementById('vName');
+        // Anonymous Guestbook Logic
         const vMsg = document.getElementById('vMsg');
         const postCommentBtn = document.getElementById('postCommentBtn');
         const commentsDisplay = document.getElementById('commentsDisplay');
 
         let savedComments = JSON.parse(localStorage.getItem('poetry_comments')) || [
-            { name: "First Reader", text: "Your poems are absolutely powerful, Anita!" }
+            { text: "Your poems are absolutely powerful, Anita!" }
         ];
 
         function renderComments() {
             commentsDisplay.innerHTML = '';
             savedComments.forEach(c => {
                 const b = document.createElement('div'); b.className = 'display-item';
-                b.innerHTML = `<div class="item-header">✍️ ${c.name}</div><div class="item-text">${c.text}</div>`;
+                b.innerHTML = `<div class="item-text">💬 "${c.text}"</div>`;
                 commentsDisplay.appendChild(b);
             });
         }
         postCommentBtn.addEventListener('click', () => {
-            if(!vName.value.trim() || !vMsg.value.trim()) return;
-            savedComments.unshift({ name: vName.value, text: vMsg.value });
+            if(!vMsg.value.trim()) return;
+            savedComments.unshift({ text: vMsg.value });
             localStorage.setItem('poetry_comments', JSON.stringify(savedComments));
-            renderComments(); vName.value = ''; vMsg.value = '';
+            renderComments(); vMsg.value = '';
         });
         renderComments();
 
-        // Poem Request Code
-        const rName = document.getElementById('rName');
+        // Anonymous Request Logic
         const rTopic = document.getElementById('rTopic');
         const postRequestBtn = document.getElementById('postRequestBtn');
         const requestsDisplay = document.getElementById('requestsDisplay');
 
         let savedRequests = JSON.parse(localStorage.getItem('poetry_requests')) || [
-            { name: "Inspiration Bot", text: "Write a poem about the sea calling you home." }
+            { text: "Write a poem about a bird leaving its cage." }
         ];
 
         function renderRequests() {
             requestsDisplay.innerHTML = '';
             savedRequests.forEach(r => {
                 const b = document.createElement('div'); b.className = 'display-item';
-                b.innerHTML = `<div class="item-header">💡 Idea from ${r.name}</div><div class="item-text">${r.text}</div>`;
+                b.innerHTML = `<div class="item-text">💡 "${r.text}"</div>`;
                 requestsDisplay.appendChild(b);
             });
         }
         postRequestBtn.addEventListener('click', () => {
-            if(!rName.value.trim() || !rTopic.value.trim()) return;
-            savedRequests.unshift({ name: rName.value, text: rTopic.value });
+            if(!rTopic.value.trim()) return;
+            savedRequests.unshift({ text: rTopic.value });
             localStorage.setItem('poetry_requests', JSON.stringify(savedRequests));
-            renderRequests(); rName.value = ''; rTopic.value = '';
+            renderRequests(); rTopic.value = '';
         });
         renderRequests();
     </script>
