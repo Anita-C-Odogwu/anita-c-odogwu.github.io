@@ -99,3 +99,37 @@ body {
         right: 25px;
     }
 }
+/*HERE*/
+/* Smoothly glides the window down when a menu item is clicked */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Translucent Top Menu Navigation Bar Styling */
+.top-nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    padding: 15px 30px;
+    border-radius: 50px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 750px;
+}
+
+.top-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.top-nav a:hover {
+    color: #f7d6c8; /* Changes to your light coral theme accent color when hovered */
+    transform: scale(1.05);
+}
