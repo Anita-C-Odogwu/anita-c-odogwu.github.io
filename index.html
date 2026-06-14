@@ -252,17 +252,28 @@ Cheated.
         </div>
         <button class="arrow" id="nextBtn">❯</button>
     </div>
-    <!-- 💬 COMMENT BOX SECTION -->
+     <!-- 💬 COMMENT BOX SECTION -->
     <div style="text-align: center; margin: 40px auto; max-width: 600px;">
         <h2>Leave a Comment or Poem Idea!</h2>
-        
-        <!-- Purple button to submit a comment -->
-        <a href="https://forms.gle" target="_blank" style="display: inline-block; padding: 12px 24px; background-color: #673ab7; color: white; font-size: 18px; font-weight: bold; text-decoration: none; border-radius: 8px; margin: 10px;">👉 Click Here to Leave a Comment 👈</a>
-        
-        <!-- White button to view your Google Sheet -->
-        <a href="https://docs.google.com/spreadsheets/d/1K4iB2vth_ZrmW4388-z8HMIV_1n_C-yU87Ql4LnlmEs/edit?usp=sharing" target="_blank" style="display: inline-block; padding: 12px 24px; background-color: white; color: #673ab7; font-size: 18px; font-weight: bold; text-decoration: none; border-radius: 8px; border: 2px solid #673ab7; margin: 10px;">📖 View Guestbook Sheet</a>
+        <a href="https://forms.gle/FcYSU9fYYtJbq4X1A" target="_blank" style="display: inline-block; padding: 12px 24px; background-color: #673ab7; color: white; font-size: 18px; font-weight: bold; text-decoration: none; border-radius: 8px; margin: 10px;">👉 Click Here to Leave a Comment 👈</a>
+        <a href="https://google.com" target="_blank" style="display: inline-block; padding: 12px 24px; background-color: white; color: #673ab7; font-size: 18px; font-weight: bold; text-decoration: none; border-radius: 8px; border: 2px solid #673ab7; margin: 10px;">📖 View Guestbook Sheet</a>
     </div>
 
-	
+    <!-- 📜 CAROUSEL ANIMATION SCRIPT -->
+    <script>
+        const cards = document.querySelectorAll('.poem-card');
+        let current = 0;
+        
+        function showCard(index) {
+            cards.forEach(c => c.classList.remove('active'));
+            if (index >= cards.length) current = 0;
+            if (index < 0) current = cards.length - 1;
+            cards[current].classList.add('active');
+        }
+        
+        document.getElementById('prevBtn').addEventListener('click', () => { showCard(current - 1); });
+        document.getElementById('nextBtn').addEventListener('click', () => { showCard(current + 1); });
+    </script>
+
 </body>
 </html>
