@@ -113,3 +113,38 @@ html { scroll-behavior: smooth; }
     font-weight: 500; font-size: 1rem; transition: color 0.2s ease, transform 0.2s ease;
 }
 .top-nav a:hover { color: #f7d6c8; transform: scale(1.05); }
+/* Floating Back to Top Navigation Button Styling */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: none; /* Stays completely invisible until you scroll down */
+    background: #7a3b5c;
+    color: #ffffff;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.back-to-top:hover {
+    background: #2c1a30;
+    transform: scale(1.1);
+}
+
+/* Adjusts placement on mobile screens so it doesn't block text lines */
+@media (max-width: 768px) {
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 44px;
+        height: 44px;
+        font-size: 1.25rem;
+    }
+}
