@@ -40,6 +40,8 @@ body {
     font-family: 'Poppins', sans-serif; font-weight: 600; text-decoration: none; font-size: 0.95rem; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: background 0.2s;
 }
 .comment-trigger-btn:hover { background: #7a3b5c; }
+
+/* 🌟 UNIVERSAL ARROW POSITIONING RULES 🌟 */
 .arrow-btn {
     background: #2c1a30; border: none; color: #ffffff; width: 55px; height: 55px; border-radius: 50%; font-size: 1.6rem;
     cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(0,0,0,0.3);
@@ -57,81 +59,57 @@ body {
 .ideas-trigger-btn:hover { background: #2c1a30; }
 .site-footer { text-align: center; padding: 20px; color: #f7d6c8; font-size: 0.9rem; margin-top: auto; }
 .warning-text { font-style: italic; font-size: 0.8rem; opacity: 0.75; margin-top: 4px; }
-/* Mobile Layout: Works perfectly on your Tecno Camon 11 */
+
+/* Mobile Layout: Float buttons to protect your long words */
 @media (max-width: 768px) {
     .carousel-wrapper { 
-        display: flex !important;
-        flex-direction: row !important; /* Forces items to stay in a flat row layout */
-        flex-wrap: nowrap !important; /* Strictly forbids buttons from dropping to the bottom */
-        align-items: center !important;
-        justify-content: center !important;
+        position: relative !important;
+        width: 100% !important;
     }
     .carousel-container { 
-        height: 750px; 
-        flex-grow: 1;}
-        .poem-card {
-        padding: 20px 15px !important; /* Gives text more side-room on phone screens */
+        width: 100% !important;
+        height: 720px !important; 
+    }
+    .poem-card {
+        padding: 30px 45px !important; /* Spaciously positions text away from edges */
+    }
+    .poem-body {
+        font-size: 1.15rem !important; /* Micro-scales down text size perfectly for phones */
+        padding: 10px 5px !important;
     }
     .arrow-btn { 
-        margin: 0 5px !important; 
-        width: 45px !important;  /* Makes arrows slightly smaller so they fit on mobile screens */
-        height: 45px !important;
+        position: absolute !important;
+        top: 45% !important;
+        z-index: 150 !important;
+        width: 44px !important;  /* Slims buttons down slightly for phones */
+        height: 44px !important;
         font-size: 1.2rem !important;
+        margin: 0 !important;
+        opacity: 0.85;
     }
+    .arrow-btn:first-of-type { left: 8px !important; }  /* Left side float */
+    .arrow-btn:last-of-type { right: 8px !important; } /* Right side float */
 }
 
-/* Computer Layout: Floats arrows over the text cards */
+/* Computer Layout: Clean float extensions over wide margins */
 @media (min-width: 769px) {
-    .carousel-wrapper {
-        position: relative; 
-    }
-    .arrow-btn {
-        position: absolute;
-        top: 40%; 
-        z-index: 100; 
-        opacity: 0.8; 
-    }
-    .arrow-btn:hover {
-        opacity: 1; 
-    }
-    .arrow-btn:first-of-type {
-        left: 25px; 
-    }
-    .arrow-btn:last-of-type {
-        right: 25px;
-    }
+    .carousel-wrapper { position: relative; }
+    .arrow-btn { position: absolute; top: 45%; z-index: 100; }
+    .arrow-btn:first-of-type { left: -85px; }
+    .arrow-btn:last-of-type { right: -85px; }
 }
-/*HERE*/
-/* Smoothly glides the window down when a menu item is clicked */
-html {
-    scroll-behavior: smooth;
-}
+
+html { scroll-behavior: smooth; }
 
 /* Translucent Top Menu Navigation Bar Styling */
 .top-nav {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    background: rgba(255, 255, 255, 0.12);
-    backdrop-filter: blur(10px);
-    padding: 15px 30px;
-    border-radius: 50px;
-    margin-bottom: 25px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    width: 100%;
-    max-width: 750px;
+    display: flex; justify-content: center; gap: 30px;
+    background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(10px);
+    padding: 15px 30px; border-radius: 50px; margin-bottom: 25px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); width: 100%; max-width: 750px;
 }
-
 .top-nav a {
-    color: #ffffff;
-    text-decoration: none;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    font-size: 1rem;
-    transition: color 0.2s ease, transform 0.2s ease;
+    color: #ffffff; text-decoration: none; font-family: 'Poppins', sans-serif;
+    font-weight: 500; font-size: 1rem; transition: color 0.2s ease, transform 0.2s ease;
 }
-
-.top-nav a:hover {
-    color: #f7d6c8; /* Changes to your light coral theme accent color when hovered */
-    transform: scale(1.05);
-}
+.top-nav a:hover { color: #f7d6c8; transform: scale(1.05); }
