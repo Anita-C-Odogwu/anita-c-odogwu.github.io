@@ -68,7 +68,9 @@ body {
     }
     .carousel-container { 
         height: 750px; 
-        flex-grow: 1;
+        flex-grow: 1;}
+        .poem-card {
+        padding: 20px 15px !important; /* Gives text more side-room on phone screens */
     }
     .arrow-btn { 
         margin: 0 5px !important; 
