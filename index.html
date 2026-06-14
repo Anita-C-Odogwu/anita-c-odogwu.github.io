@@ -11,9 +11,17 @@
     <link href="https://googleapis.com" rel="stylesheet">
     
     <!-- Your Exact Feather Shortcut Icon Link -->
-    <link rel="icon" type="image/png" href="https://i.postimg.cc/k5PKdrwZ/Screenshot-2026-06-14-6-55-30-PM.png">
+    <link rel="icon" type="image/png" href="https://postimg.cc">
     
     <link rel="stylesheet" href="style.css">
+    
+    <!-- Text to Speech Button Layout Styling -->
+    <style>
+        .tts-container { display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 20px; border-bottom: 2px dashed #d46a6a; padding-bottom: 10px; }
+        .poem-title { border-bottom: none !important; margin-bottom: 0 !important; padding-bottom: 0 !important; }
+        .audio-btn { background: #7a3b5c; color: white; border: none; padding: 6px 14px; border-radius: 20px; font-family: 'Poppins', sans-serif; font-size: 0.85rem; font-weight: 600; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.15); transition: background 0.2s; }
+        .audio-btn:hover { background: #2c1a30; }
+    </style>
 </head>
 <body>
 
@@ -29,17 +37,17 @@
         <h1>Anita C Odogwu</h1>
         <p class="subtitle">(Poetry Collection)</p>
         <!-- Your Exact Feather Image Link -->
-        <img src="https://i.postimg.cc/k5PKdrwZ/Screenshot-2026-06-14-6-55-30-PM.png" alt="Poetry Feather Badge" class="header-feather">
+        <img src="https://postimg.cc" alt="Poetry Feather Badge" class="header-feather">
     </header>
 
-        <!-- About Biography Box Segment -->
+    <!-- About Biography Box Segment -->
     <section id="about-me" class="bio-box">
         <h3>About The Poet</h3>
         <p>Welcome to my official creative writing space. I am an award-winning Sheffield poet dedicated to exploring history, identity, and culture through verse.</p>
         
         <!-- 🌟 THE HIDDEN BIOGRAPHY EXTENSION START 🌟 -->
         <div id="extended-bio" style="display: none; margin-top: 15px;">
-            <p>Anita C. Odogwu is an award-winning Black British poet and performer based in Sheffield, South Yorkshire, whose writing deeply explores identity, culture, and her rich heritage. Born and raised in Lagos State, Nigeria, she spent her formative years at Lea Valley School before relocating to England at the age of ten. After completing her primary education at Carfield Community Primary School, Anita transitioned to All Saints Catholic High School, where her distinct literary talent quickly gained recognition.As a Year 7 student, her poetic voice emerged with striking clarity when she claimed both Gold and Silver medals in the prestigious Sheffield Young Poets Award Competition. Sweeping the Key Stage 3 category with her moving entries, "Black? British? Both?" and "My History Is My Pride," Anita highlighted a sophisticated grasp of history and identity well beyond her years.A celebrated voice within the community, Anita continues to represent the next generation of creative talent in South Yorkshire, recently returning to Sheffield Town Hall by special invitation to perform her acclaimed poetry in person. Supported by her parents, Mr. Kingsley A. Odogwu and Mrs. Anita I. Odogwu, her work serves as a powerful testament to the beauty of celebrating one's roots.
+            <p>Anita C. Odogwu is an award-winning Black British poet based in Sheffield, South Yorkshire, whose writing deeply explores identity, culture, and her rich heritage. Born and raised in Lagos State, Nigeria, she spent her formative years at Lea Valley School before relocating to England at the age of ten. After completing her primary education at Carfield Community Primary School, Anita transitioned to All Saints Catholic High School, where her distinct literary talent quickly gained recognition.As a Year 7 student, her poetic voice emerged with striking clarity when she claimed both Gold and Silver medals in the prestigious Young Poets Award Competition under the theme of Windrush. Sweeping the Key Stage 3 category with her moving entries, "Black? British? Both?" and "My History Is My Pride," Anita highlighted a sophisticated grasp of history and identity well beyond her years. Supported by her parents, Mr. Kingsley A. Odogwu and Mrs. Anita I. Odogwu, Anita continues to craft evocative verse that celebrates her roots and invites readers to reflect on the power of personal history.
 				[The poems are available to read below.]</p>
         </div>
         <!-- 🌟 THE HIDDEN BIOGRAPHY EXTENSION END 🌟 -->
@@ -57,7 +65,10 @@
             
             <!-- CARD 1 -->
             <article class="poem-card active">
-                <h2 class="poem-title">Black? British? Both?</h2>
+                <div class="tts-container">
+                    <h2 class="poem-title">Black? British? Both?</h2>
+                    <button class="audio-btn" onclick="speakPoem(this)">🔊 Listen</button>
+                </div>
                 <div class="poem-body">
                     <p>Black, British, or both? 
 I guess I will never know…
@@ -108,13 +119,16 @@ Being half is not enough,
 And it will never be that much.</p>
                     
                     <!-- Your Exact Comments Form Link -->
-                    <a href="https://forms.gle/H5r8dis2Loyuzyng6" target="_blank" class="comment-trigger-btn">💬 Comment on this Poem</a>
+                    <a href="https://forms.gle" target="_blank" class="comment-trigger-btn">💬 Comment on this Poem</a>
                 </div>
             </article>
 
             <!-- CARD 2 -->
             <article class="poem-card">
-                <h2 class="poem-title">My History Is My Pride</h2>
+                <div class="tts-container">
+                    <h2 class="poem-title">My History Is My Pride</h2>
+                    <button class="audio-btn" onclick="speakPoem(this)">🔊 Listen</button>
+                </div>
                 <div class="poem-body">
                     <p>Home isn’t just where you live.
 It is your story.
@@ -158,13 +172,16 @@ And that can be you.
 But
 Only if you choose so.</p>
                     <!-- Your Exact Comments Form Link -->
-                    <a href="https://forms.gle/H5r8dis2Loyuzyng6" target="_blank" class="comment-trigger-btn">💬 Comment on this Poem</a>
+                    <a href="https://forms.gle" target="_blank" class="comment-trigger-btn">💬 Comment on this Poem</a>
                 </div>
             </article>
 
             <!-- CARD 3 -->
             <article class="poem-card">
-                <h2 class="poem-title">Then And Now</h2>
+                <div class="tts-container">
+                    <h2 class="poem-title">Then And Now</h2>
+                    <button class="audio-btn" onclick="speakPoem(this)">🔊 Listen</button>
+                </div>
                 <div class="poem-body">
                     <p>A place beyond,
 A place I wasn't so fond of.
@@ -202,13 +219,15 @@ I would leave my cage,
 And spread my wings
 And fly into the sky, to learn new things</p>
                     <!-- Your Exact Comments Form Link -->
-                    <a href="https://forms.gle/H5r8dis2Loyuzyng6" target="_blank" class="comment-trigger-btn">💬 Comment on this Poem</a>
+                    <a href="https://forms.gle" target="_blank" class="comment-trigger-btn">💬 Comment on this Poem</a>
                 </div>
             </article>
-
             <!-- CARD 4 -->
             <article class="poem-card">
-                <h2 class="poem-title">Beneath The Iron Sky</h2>
+                <div class="tts-container">
+                    <h2 class="poem-title">Beneath The Iron Sky</h2>
+                    <button class="audio-btn" onclick="speakPoem(this)">🔊 Listen</button>
+                </div>
                 <div class="poem-body">
                     <p>Mama once said ‘if you are smart you are strong’.
 I was smart, I was strong.
@@ -267,12 +286,16 @@ Cheated.
 			Cheated.
 					Others.</p>
                     <!-- Your Exact Comments Form Link -->
-                    <a href="https://forms.gle/H5r8dis2Loyuzyng6" target="_blank" class="comment-trigger-btn">💬 Comment on this Poem</a>
+                    <a href="https://forms.gle" target="_blank" class="comment-trigger-btn">💬 Comment on this Poem</a>
                 </div>
             </article>
+
             <!-- CARD 5 -->
             <article class="poem-card">
-                <h2 class="poem-title">We Know It Came</h2>
+                <div class="tts-container">
+                    <h2 class="poem-title">We Know It Came</h2>
+                    <button class="audio-btn" onclick="speakPoem(this)">🔊 Listen</button>
+                </div>
                 <div class="poem-body">
                     <p>When the leaves fall
 They leave the trees barren,
@@ -308,22 +331,24 @@ We know it came.
 And for me,
 That’s all that matters in this game.</p>
                     <!-- Your Exact Comments Form Link -->
-                    <a href="https://forms.gle/H5r8dis2Loyuzyng6" target="_blank" class="comment-trigger-btn">💬 Comment on this Poem</a>
+                    <a href="https://forms.gle" target="_blank" class="comment-trigger-btn">💬 Comment on this Poem</a>
                 </div>
             </article>
 
             <!-- CARD 6 -->
             <article class="poem-card">
-                <h2 class="poem-title">Upcoming</h2>
+                <div class="tts-container">
+                    <h2 class="poem-title">Upcoming</h2>
+                    <button class="audio-btn" onclick="speakPoem(this)">🔊 Listen</button>
+                </div>
                 <div class="poem-body">
                     <p>New Chapters, New Stories</p>
                     <!-- Your Exact Comments Form Link -->
-                    <a href="https://forms.gle/H5r8dis2Loyuzyng6" target="_blank" class="comment-trigger-btn">💬 Comment on this Poem</a>
+                    <a href="https://forms.gle" target="_blank" class="comment-trigger-btn">💬 Comment on this Poem</a>
                 </div>
             </article>
             
         </div>
-
         <!-- YOUR INTERACTIVE RIGHT ARROW BUTTON -->
         <button id="nextBtn" class="arrow-btn" aria-label="Next Poem">❯</button>
     </div>
@@ -350,11 +375,12 @@ That’s all that matters in this game.</p>
     </footer>
 
     <script src="script.js"></script>
-	    <script>
+    
+    <!-- Interactive Logic Scripts Container -->
+    <script>
     function toggleBio() {
         var extendedBio = document.getElementById("extended-bio");
         var toggleBtn = document.getElementById("bioToggleBtn");
-        
         if (extendedBio.style.display === "none") {
             extendedBio.style.display = "block";
             toggleBtn.innerHTML = "Show Less ▴";
@@ -363,7 +389,39 @@ That’s all that matters in this game.</p>
             toggleBtn.innerHTML = "Read Full Bio ▾";
         }
     }
-    </script>
 
+    // 🔊 Smart Text-To-Speech Logic Controller Function
+    function speakPoem(button) {
+        // If voice is already speaking, turn it off instantly
+        if (window.speechSynthesis.speaking) {
+            window.speechSynthesis.cancel();
+            
+            // Turn all audio button labels back to Listen
+            document.querySelectorAll('.audio-btn').forEach(btn => btn.innerHTML = "🔊 Listen");
+            return;
+        }
+
+        // Locate the matching paragraph text block inside the active card
+        var card = button.closest('.poem-card');
+        var textToRead = card.querySelector('.poem-body p').innerText;
+        var titleToRead = card.querySelector('.poem-title').innerText;
+
+        // Set up the voice line content sequence
+        var utterance = new SpeechSynthesisUtterance(titleToRead + ". " + textToRead);
+        
+        // Adjust standard line speech properties
+        utterance.rate = 0.95; // Slightly slower pacing for expressive speech reading
+        utterance.pitch = 1.0; 
+
+        // Update button visual trigger when speech finishes reading
+        utterance.onend = function() {
+            button.innerHTML = "🔊 Listen";
+        };
+
+        // Initialize voice engine execution commands
+        button.innerHTML = "🛑 Stop";
+        window.speechSynthesis.speak(utterance);
+    }
+    </script>
 </body>
 </html>
