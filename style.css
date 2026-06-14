@@ -1,105 +1,258 @@
-* { box-sizing: border-box; margin: 0; padding: 0; }
+/* Zero out basic margins to prevent layout breaks */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Custom Instagram/Facebook Blend Gradient Background Styles */
 body {
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(135deg, #2c1a30 0%, #7a3b5c 40%, #d46a6a 80%, #f7d6c8 100%);
-    min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 40px 20px; color: #2c1a30;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    color: #2c1a30;
 }
-header { 
-    text-align: center; margin-bottom: 30px; background: rgba(255, 255, 255, 0.15);
-    padding: 20px 40px; border-radius: 30px; backdrop-filter: blur(8px); box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-}
-header h1 { font-family: 'Playfair Display', serif; font-size: 3rem; color: #ffffff; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
-header p { font-size: 1.2rem; color: #f7d6c8; font-style: italic; }
-.carousel-wrapper { display: flex; align-items: center; justify-content: center; width: 100%; max-width: 750px; margin-bottom: 40px; }
-.carousel-container {
-    position: relative; width: 100%; height: 750px; overflow: hidden; border-radius: 24px;
-    box-shadow: 0 20px 45px rgba(0,0,0,0.25); background: #fffcf7; border: 1px solid rgba(255,255,255,0.5);
-}
-.poem-card {
-    position: absolute; top: 0; left: 0; width: 100%; height: 100%; padding: 40px; display: flex; flex-direction: column;
-    opacity: 0; transform: translateX(100%); transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
-}
-.poem-card.active { opacity: 1; transform: translateX(0); }
-.poem-card.prev { transform: translateX(-100%); }
-.poem-title {
-    font-family: 'Playfair Display', serif; font-size: 2rem; color: #4a2333; margin-bottom: 20px;
-    text-align: center; border-bottom: 2px dashed #d46a6a; padding-bottom: 10px;
-}
-.poem-body {
-    font-family: 'Playfair Display', serif; font-size: 1.2rem; line-height: 1.8; color: #2b2024;
-    white-space: pre-line; text-align: center; overflow-y: auto; padding-right: 5px;
-}
-.poem-body::-webkit-scrollbar { width: 5px; }
-.poem-body::-webkit-scrollbar-thumb { background-color: #d46a6a; border-radius: 10px; }
-.arrow {
-    background: #2c1a30; border: none; color: #ffffff; width: 55px; height: 55px; border-radius: 50%; font-size: 1.6rem;
-    cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    transition: all 0.2s ease; margin: 0 15px; flex-shrink: 0;
-}
-.arrow:hover { background: #ffffff; color: #2c1a30; transform: scale(1.1); }
-.interactive-sections { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; width: 100%; max-width: 900px; margin-bottom: 40px; }
-.action-box { background: rgba(255, 255, 255, 0.95); padding: 30px; border-radius: 24px; box-shadow: 0 15px 35px rgba(0,0,0,0.15); }
-.action-box h3 { font-family: 'Playfair Display', serif; margin-bottom: 15px; color: #4a2333; border-left: 4px solid #7a3b5c; padding-left: 12px; }
-.box-form { display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; }
-.box-textarea {
-    width: 100%; padding: 12px 15px; border-radius: 12px; border: 1px solid #c3cfe2;
-    font-family: 'Poppins', sans-serif; font-size: 0.95rem; color: #2c1a30; background: #fffcf7; height: 110px; resize: none;
-}
-.box-btn {
-    background: #2c1a30; color: white; border: none; padding: 10px 20px; border-radius: 12px;
-    font-size: 0.95rem; font-weight: 600; cursor: pointer; align-self: flex-start; transition: background 0.2s;
-}
-.box-btn:hover { background: #7a3b5c; }
-.list-display { display: flex; flex-direction: column; gap: 12px; max-height: 250px; overflow-y: auto; }
-.display-item { background: #fffcf7; border: 1px solid #f7d6c8; padding: 12px; border-radius: 12px; }
-.item-text { color: #2b2024; font-size: 0.95rem; line-height: 1.5; font-style: italic; }
-@media (max-width: 768px) {
-    .interactive-sections { grid-template-columns: 1fr; }
-    .carousel-wrapper { flex-wrap: wrap; }
-    .arrow { order: 2; margin: 20px 10px 0 10px; }
-    .carousel-container { order: 1; height: 750px; }
-}
-/* ANITA'S LAYOUT FIX - THIS STRETCHES THE BOX SO NOTHING OVERLAPS */
 
-.slider-container {
+/* Glassmorphism Name Title Header Box Layout Design */
+.main-header {
+    text-align: center;
+    margin-bottom: 25px;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 25px 50px;
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    width: 100%;
+    max-width: 750px;
+}
+
+.main-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    color: #ffffff;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.25);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #f7d6c8;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+.header-feather {
+    display: block;
+    margin: 15px auto 0 auto;
+    width: 55px;
+    height: auto;
+    filter: drop-shadow(0px 4px 8px rgba(0,0,0,0.2));
+}
+
+/* Biography Box Layout Alignment Configuration */
+.bio-box {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 750px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.bio-box h3 {
+    font-family: 'Playfair Display', serif;
+    color: #4a2333;
+    margin-bottom: 8px;
+    font-size: 1.3rem;
+}
+
+.bio-box p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #444;
+}
+
+/* Centred Card Slider Layout Container Constraints */
+.carousel-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-    max-width: 750px;
-    margin: 0 auto 40px auto;
+    max-width: 850px;
+    margin-bottom: 40px;
+    gap: 15px;
 }
 
-.poem-wrapper {
+.carousel-container {
     position: relative;
     width: 100%;
-    height: 700px; /* This forces the box to be tall so text doesn't smash together! */
-    background: #fffcf7;
+    height: 600px; /* Big card structural sizing height */
+    overflow: hidden;
     border-radius: 24px;
     box-shadow: 0 20px 45px rgba(0,0,0,0.25);
-    overflow: hidden;
+    background: #fffcf7;
+    border: 1px solid rgba(255,255,255,0.4);
 }
 
+/* Absolute Positioning Card Sliding Animation Frame Properties */
+.poem-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    pointer-events: none;
+}
+
+.poem-card.active {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+}
+
+.poem-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: #4a2333;
+    margin-bottom: 20px;
+    text-align: center;
+    border-bottom: 2px dashed #d46a6a;
+    padding-bottom: 12px;
+}
+
+/* Scrollable Center Block Text Container Styles */
+.poem-body {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    line-height: 2;
+    color: #2b2024;
+    white-space: pre-line; /* Respects enters automatically without br tags */
+    text-align: center; /* Enforces line by line absolute text centering */
+    overflow-y: auto;
+    padding: 10px 20px;
+    flex-grow: 1;
+}
+
+/* Custom Scrollbar track parameters inside your card components */
+.poem-body::-webkit-scrollbar {
+    width: 6px;
+}
+.poem-body::-webkit-scrollbar-thumb {
+    background-color: #d46a6a;
+    border-radius: 10px;
+}
+
+/* Clean White Floating Arrow Buttons Styling Configs */
 .arrow-btn {
-    background: #2c1a30;
-    border: none;
-    color: #ffffff;
+    background: #ffffff;
+    border: 1px solid rgba(0,0,0,0.05);
+    color: #2c1a30;
     width: 55px;
     height: 55px;
     border-radius: 50%;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    transition: all 0.2s ease;
-    margin: 0 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     flex-shrink: 0;
 }
 
 .arrow-btn:hover {
-    background: #ffffff;
-    color: #2c1a30;
-    transform: scale(1.1);
+    background: #2c1a30;
+    color: #ffffff;
+    transform: scale(1.15); /* Slightly pops when hovered */
+}
+
+/* Global Comments Dashboard Container Component Styling Layout */
+.comments-wrapper {
+    width: 100%;
+    max-width: 750px;
+    margin-bottom: 40px;
+}
+
+.action-box {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 35px;
+    border-radius: 24px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.18);
+}
+
+.action-box h3 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 10px;
+    color: #4a2333;
+    border-left: 4px solid #7a3b5c;
+    padding-left: 12px;
+    font-size: 1.5rem;
+}
+
+.section-desc {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+/* Grid parameters for future Google Form Link Integrations */
+.links-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.global-comments-thread {
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+/* Site Footer Typography Parameters */
+.site-footer {
+    text-align: center;
+    padding: 20px;
+    color: #f7d6c8;
+    font-size: 0.9rem;
+    margin-top: auto;
+}
+
+.warning-text {
+    font-style: italic;
+    font-size: 0.8rem;
+    opacity: 0.75;
+    margin-top: 4px;
+}
+
+/* Responsive view optimization rule breaks for small viewport screens */
+@media (max-width: 768px) {
+    .carousel-wrapper {
+        flex-wrap: wrap;
+    }
+    .arrow-btn {
+        order: 2;
+        margin: 15px 10px 0 10px;
+    }
+    .carousel-container {
+        order: 1;
+        height: 650px;
+    }
+    .links-grid {
+        grid-template-columns: 1fr;
+    }
 }
