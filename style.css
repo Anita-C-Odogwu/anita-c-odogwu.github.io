@@ -57,15 +57,32 @@ body {
 .ideas-trigger-btn:hover { background: #2c1a30; }
 .site-footer { text-align: center; padding: 20px; color: #f7d6c8; font-size: 0.9rem; margin-top: auto; }
 .warning-text { font-style: italic; font-size: 0.8rem; opacity: 0.75; margin-top: 4px; }
-/* Gives your poems side margins so text doesn't hit the arrows */
-.poem-body {
-    padding: 10px 60px !important; /* Adds extra blank space on left and right sides */
+/* Computer Layout: Floats arrows beautifully over the text cards */
+@media (min-width: 769px) {
+    .carousel-wrapper {
+        position: relative; /* Sets up the anchor zone */
+    }
+    .arrow-btn {
+        position: absolute;
+        top: 40%; /* Adjusts exactly how high up the poems they float */
+        z-index: 100; /* Forces them to stay visible on top of text */
+        opacity: 0.8; /* Makes them slightly see-through so they look classy */
+    }
+    .arrow-btn:hover {
+        opacity: 1; /* Highlights them brightly when hovered */
+    }
+    /* Pins the left arrow cleanly inside the left text edge */
+    .arrow-btn:first-of-type {
+        left: 25px; 
+    }
+    /* Pins the right arrow cleanly inside the right text edge */
+    .arrow-btn:last-of-type {
+        right: 25px;
+    }
 }
 
+/* Mobile Layout: Leaves everything neat and safe for phones */
 @media (max-width: 768px) {
-    .poem-body {
-        padding: 10px 20px !important; /* Brings text back to normal on small phone screens */
-    }
     .carousel-wrapper { 
         flex-wrap: wrap; 
     }
@@ -76,25 +93,5 @@ body {
     .arrow-btn { 
         order: 2; 
         margin: 15px 10px 0 10px; 
-    }
-}
-
-/* Computer Layout Button Positioning Rules Only */
-@media (min-width: 769px) {
-    .carousel-wrapper {
-        position: relative; /* Anchor point for your arrows */
-    }
-    .arrow-btn {
-        position: absolute;
-        top: 45%; /* Centers them directly on the middle section of the cards */
-        z-index: 10;
-    }
-    /* Places the left arrow neatly inside the left margin space */
-    .arrow-btn:first-of-type {
-        left: 15px; 
-    }
-    /* Places the right arrow neatly inside the right margin space */
-    .arrow-btn:last-of-type {
-        right: 15px;
     }
 }
