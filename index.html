@@ -352,5 +352,20 @@ That’s all that matters in this game.</p>
     </footer>
 
     <script src="script.js"></script>
+	    <script>
+    function toggleBio() {
+        var extendedBio = document.getElementById("extended-bio");
+        var toggleBtn = document.getElementById("bioToggleBtn");
+        
+        if (extendedBio.style.display === "none") {
+            extendedBio.style.display = "block";
+            toggleBtn.innerHTML = "Show Less ▴";
+        } else {
+            extendedBio.style.display = "none";
+            toggleBtn.innerHTML = "Read Full Bio ▾";
+        }
+    }
+    </script>
+
 </body>
 </html>
