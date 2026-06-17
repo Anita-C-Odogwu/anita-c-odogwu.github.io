@@ -8,10 +8,10 @@
     <!-- Google Fonts Links: Cinzel, Lora, & Poppins -->
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Cinzel:wght@600;700&family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://googleapis.com" rel="stylesheet">
 
     <!-- Feather Shortcut Icon Link -->
-    <link rel="icon" type="image/png" href="https://i.postimg.cc/k5PKdrwZ/Screenshot-2026-06-14-6-55-30-PM.png">
+    <link rel="icon" type="image/png" href="https://postimg.cc">
     
     <link rel="stylesheet" href="style.css">
     
@@ -26,11 +26,14 @@
         .art-card p { font-family: 'Lora', serif; color: #666; font-size: 0.95rem; font-style: italic; margin: 0; }
         .back-home { margin-top: 40px; display: inline-block; background: #7a3b5c; color: white; padding: 8px 20px; border-radius: 20px; text-decoration: none; font-family: 'Poppins', sans-serif; font-size: 0.9rem; transition: background 0.2s; }
         .back-home:hover { background: #2c1a30; }
+        
+        /* Footer Styling */
+        footer { margin-top: 60px; text-align: center; padding: 20px; font-family: 'Poppins', sans-serif; font-size: 0.85rem; color: #fff; border-top: 1px dashed rgba(255,255,255,0.2); }
     </style>
 </head>
 <body>
 
-    <!-- Navigation Bar (Keeps your links identical across pages) -->
+    <!-- Navigation Bar -->
     <nav class="top-nav">
         <a href="index.html#about-me">About Me</a>
         <a href="index.html#my-poems">My Poems</a>
@@ -41,30 +44,34 @@
 
     <!-- Main Gallery Section -->
     <section class="gallery-section">
-        <h1 class="gallery-title">My Charcoal Portraits</h1>
+        <h1 class="gallery-title">My Graphite Portraits</h1>
         
         <div class="gallery-grid">
             
             <!-- Card 1: Audrey Hepburn -->
             <div class="art-card">
-                <!-- Swap 'images/audrey.jpg' with your real image path later -->
-                <img src="images/audrey.jpg" alt="Charcoal portrait of Audrey Hepburn">
+                <img src="audrey.jpg" alt="Graphite portrait of Audrey Hepburn">
                 <h3>Audrey Hepburn</h3>
-                <p>Medium Charcoal and Blending Stump on Paper</p>
+                <p>Graphite and Blending Stump on Paper</p>
             </div>
 
             <!-- Card 2: Chadwick Boseman -->
             <div class="art-card">
-                <!-- Swap 'images/chadwick.jpg' with your real image path later -->
-                <img src="images/chadwick.jpg" alt="Charcoal portrait of Chadwick Boseman">
+                <img src="chadwick.jpg" alt="Graphite portrait of Chadwick Boseman">
                 <h3>Chadwick Boseman</h3>
-                <p>Medium Charcoal with High-Contrast Studio Lighting</p>
+                <p>Graphite with High-Contrast Studio Lighting</p>
             </div>
 
         </div>
 
+        <br>
         <a href="index.html" class="back-home">← Back to Poetry Collection</a>
     </section>
+
+    <!-- Copyright Footer -->
+    <footer>
+        <p>&copy; 2026 Anita C Odogwu. All Rights Reserved.</p>
+    </footer>
 
 </body>
 </html>
