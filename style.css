@@ -155,15 +155,33 @@ footer {
     font-size: 0.85rem;
     color: #888;
 }
-.gallery-section {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  padding: 20px;
+/* 1. Force all gallery cards to stay uniform */
+.gallery-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%; /* Ensures all cards match each other's height */
+  overflow: hidden;
 }
-.gallery-section img {
+
+/* 2. Contain the image sizes so "The Rose" doesn't explode the layout */
+.gallery-card img, 
+.gallery-container img {
   width: 100%;
-  height: auto;
-  object-fit: cover; 
-  border-radius: 8px; /* Optional: smooths out your card edges */
+  max-height: 250px;    /* 👈 This stops images from stretching infinitely tall */
+  object-fit: cover;    /* 👈 This crops them neatly inside their designated box */
+  object-position: center;
+}
+
+/* 3. Ensure the sub-grid for reference vs sketch stays side-by-side */
+.image-preview-box { 
+  display: flex;
+  gap: 10px;
+}
+
+.image-preview-box img {
+  flex: 1;
+  width: 50%;           /* 👈 Forces the REF and SKETCH images to be equal halves */
+  height: 150px;        /* Adjust this to make your thumbnail boxes shorter or taller */
+  object-fit: cover;
 }
