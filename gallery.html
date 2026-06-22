@@ -17,37 +17,29 @@
     
     <!-- Gallery Grid Specific Layout Styling -->
     <style>
-        .gallery-section { 
-            padding: 40px 20px; 
-            max-width: 1200px !important; 
-            width: 90% !important;
-            margin: 0 auto; 
-            text-align: center; 
-            box-sizing: border-box; 
-        }
+        .gallery-section { padding: 40px 20px; max-width: 1200px; margin: 0 auto; text-align: center; width: 100%; box-sizing: border-box; }
         .gallery-title { font-family: 'Cinzel', serif; color: #7a3b5c; margin-bottom: 30px; font-size: 2.5rem; }
         
-        /* Using Flexbox wrap instead of Grid to pull cards up and close gaps */
+        /* 🌟 THE ULTIMATE MASONRY FIX 🌟 */
+        /* This eliminates the row restrictions entirely so cards stack snuggly under each other */
         .gallery-grid { 
-            display: flex !important;
-            flex-wrap: wrap !important;
-            justify-content: center !important;
-            gap: 30px !important;
+            display: block !important;
+            column-count: 3 !important;
+            column-gap: 30px !important;
             width: 100% !important;
             margin-top: 20px !important;
         }
         
-        /* Flexbox Card sizing: keeps them matching on laptop screen rows */
+        /* Individual Art Card Containers */
         .art-card { 
             background: #fff !important; 
-            padding: 18px !important; 
+            padding: 15px !important; 
             border-radius: 8px !important; 
             box-shadow: 0 4px 15px rgba(0,0,0,0.05) !important; 
             border: 1px solid #f0e6eb !important; 
-            display: flex !important;
-            flex-direction: column !important;
-            flex: 1 1 320px !important; /* Dynamically shrinks and grows */
-            max-width: 360px !important; /* Keeps cards from stretching too wide on landscape */
+            display: inline-block !important; /* Crucial: stops cards from stretching or tearing apart */
+            width: 100% !important;
+            margin-bottom: 30px !important; /* Spacing below cards */
             box-sizing: border-box !important;
             text-align: center;
         }
@@ -55,8 +47,6 @@
         .art-card img { 
             width: 100% !important; 
             height: auto !important; 
-            max-height: 400px !important; 
-            object-fit: contain !important; 
             border-radius: 4px !important; 
             display: block !important; 
             cursor: pointer !important;
@@ -104,7 +94,7 @@
             pointer-events: none !important;
         }
 
-        /* Lightbox pop-up Modal overlay */
+        /* Lightbox modal zoom viewing platform rules */
         .lightbox-overlay {
             position: fixed !important;
             z-index: 9999 !important;
@@ -143,9 +133,12 @@
             user-select: none !important;
         }
 
+        /* Screen responsiveness resizing rules */
+        @media (max-width: 900px) {
+            .gallery-grid { column-count: 2 !important; }
+        }
         @media (max-width: 600px) {
-            .comparison-container { flex-direction: column !important; }
-            .art-card { max-width: 100% !important; }
+            .gallery-grid { column-count: 1 !important; }
         }
     </style>
 </head>
