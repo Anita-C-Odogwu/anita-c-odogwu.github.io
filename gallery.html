@@ -11,7 +11,7 @@
     <link href="https://googleapis.com" rel="stylesheet">
  
     <!-- Fixed Glowing Feather Favicon Direct Link -->
-    <link rel="icon" type="image/png" href="https://i.postimg.cc/k5PKdrwZ/Screenshot-2026-06-14-6-55-30-PM.png">
+    <link rel="icon" type="image/png" href="https://postimg.cc">
     
     <link rel="stylesheet" href="style.css">
     
@@ -27,17 +27,17 @@
         }
         .gallery-title { font-family: 'Cinzel', serif; color: #7a3b5c; margin-bottom: 30px; font-size: 2.5rem; }
         
-        /* align-items: start fixes the vertical card stretching */
+        /* Using Flexbox wrap instead of Grid to pull cards up and close gaps */
         .gallery-grid { 
-            display: grid !important;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
+            display: flex !important;
+            flex-wrap: wrap !important;
+            justify-content: center !important;
             gap: 30px !important;
             width: 100% !important;
             margin-top: 20px !important;
-            align-items: start !important; 
         }
         
-        /* Individual Art Card Container */
+        /* Flexbox Card sizing: keeps them matching on laptop screen rows */
         .art-card { 
             background: #fff !important; 
             padding: 18px !important; 
@@ -46,8 +46,8 @@
             border: 1px solid #f0e6eb !important; 
             display: flex !important;
             flex-direction: column !important;
-            width: 100% !important; 
-            max-width: 100% !important;
+            flex: 1 1 320px !important; /* Dynamically shrinks and grows */
+            max-width: 360px !important; /* Keeps cards from stretching too wide on landscape */
             box-sizing: border-box !important;
             text-align: center;
         }
@@ -145,6 +145,7 @@
 
         @media (max-width: 600px) {
             .comparison-container { flex-direction: column !important; }
+            .art-card { max-width: 100% !important; }
         }
     </style>
 </head>
