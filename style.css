@@ -162,7 +162,7 @@ footer { text-align: center; padding: 20px; font-family: 'Poppins', sans-serif; 
   display: none; 
   position: fixed; 
   bottom: 20px; 
-  left: 20px; 
+  right: 20px; 
   z-index: 99; 
   border: none; 
   outline: none; 
