@@ -671,25 +671,24 @@ It is a signature of our future.
         utterance.onend = function() {
             button.innerHTML = "🔊 Listen";
         };
-
         button.innerHTML = "🛑 Stop";
         window.speechSynthesis.speak(utterance);
     }
-    </script> <!-- This closes the audio script safely so your carousel works -->
+    </script> <!-- Safely shuts down your audio logic -->
 
-    <!-- Back to Top Scroll Logic -->
+    <!-- This runs your Back to Top button logic independently -->
     <script>
-    const backToTopButton = document.getElementById("backToTop");
+    const scrollButton = document.getElementById("backToTop");
 
     window.onscroll = function () {
       if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-        backToTopButton.style.display = "block";
+        scrollButton.style.display = "block";
       } else {
-        backToTopButton.style.display = "none";
+        scrollButton.style.display = "none";
       }
     };
 
-    backToTopButton.onclick = function () {
+    scrollButton.onclick = function () {
       window.scrollTo({
         top: 0,
         behavior: "smooth"
