@@ -10,25 +10,23 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log(nextBtn);
 
     let currentIndex = 0;
-function showPoem(nextIndex) {
-    currentIndex = (nextIndex + poems.length) % poems.length;
 
-    poems.forEach((poem, index) => {
-        if (index === currentIndex) {
-            poem.classList.add("active");
-        } else {
-            poem.classList.remove("active");
-        }
-    });
-}
-poems[currentIndex].classList.remove("active");
+    function showPoem(nextIndex) {
+        currentIndex = (nextIndex + poems.length) % poems.length;
 
-currentIndex = (nextIndex + poems.length) % poems.length;
+        poems.forEach((poem, index) => {
+            if (index === currentIndex) {
+                poem.classList.add("active");
+            } else {
+                poem.classList.remove("active");
+            }
+        });
 
-console.log("New current:", currentIndex);
-
-poems[currentIndex].classList.add("active");
+        console.log("New current:", currentIndex);
     }
+
+    // Show first poem when page loads
+    showPoem(currentIndex);
 
     prevBtn.addEventListener("click", () => {
         showPoem(currentIndex - 1);
