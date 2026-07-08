@@ -16,7 +16,12 @@ document.addEventListener("DOMContentLoaded", () => {
             innerBody.scrollTop = 0;
         }
     }
+prevBtn.addEventListener("click", () => {
+    console.log("Previous clicked");
+    showPoem(currentIndex - 1);
+});
 
-    prevBtn.addEventListener("click", () => showPoem(currentIndex - 1));
-    nextBtn.addEventListener("click", () => showPoem(currentIndex + 1));
+nextBtn.addEventListener("click", () => {
+    console.log("Next clicked");
+    showPoem(currentIndex + 1);
 });
