@@ -12,9 +12,16 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentIndex = 0;
 
     function showPoem(nextIndex) {
-        poems[currentIndex].classList.remove("active");
-        currentIndex = (nextIndex + poems.length) % poems.length;
-        poems[currentIndex].classList.add("active");
+        console.log("Current:", currentIndex);
+console.log("Going to:", nextIndex);
+
+poems[currentIndex].classList.remove("active");
+
+currentIndex = (nextIndex + poems.length) % poems.length;
+
+console.log("New current:", currentIndex);
+
+poems[currentIndex].classList.add("active");
     }
 
     prevBtn.addEventListener("click", () => {
