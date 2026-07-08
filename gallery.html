@@ -160,15 +160,15 @@
         <a href="index.html#contact-booking">Bookings</a>
         <a href="gallery.html">Art Gallery</a>
     </nav>
-
-<!-- 1. The Interactive Trigger Button -->
+    
+<!-- 1. The Underlined Text Link Trigger -->
 <div style="text-align: center; max-width: 600px; margin: 25px auto 0 auto; padding: 10px;">
-  <button id="toggleBioLink" style="background-color: rgba(255, 255, 255, 0.2); color: #ffffff; border: 2px solid #ffffff; padding: 12px 24px; font-size: 1.1rem; font-weight: bold; border-radius: 25px; cursor: pointer; transition: all 0.3s ease; backdrop-filter: blur(5px); box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+  <span id="toggleBioLink" style="color: #ffffff; text-decoration: underline; text-underline-offset: 4px; font-weight: bold; font-size: 1.2rem; cursor: pointer; display: inline-block; transition: opacity 0.2s ease;">
     ✨ Tap here to read my Artist Statement
-  </button>
+  </span>
 
   <!-- 2. The Bio Text (Hidden by default) -->
-  <div id="bioTextContainer" style="display: none; animation: fadeIn 0.4s ease; text-align: center; color: #ffffff; font-size: 1.1rem; line-height: 1.6; margin-top: 20px; background-color: rgba(0, 0, 0, 0.2); padding: 20px; border-radius: 15px;">
+  <div id="bioTextContainer" style="display: none; animation: fadeIn 0.4s ease; text-align: center; color: #ffffff; font-size: 1.1rem; line-height: 1.6; margin-top: 20px;">
     <strong>ARTIST STATEMENT</strong><br><br>
     I am a multimedia creative focusing on hyper-realistic graphite studies, high-contrast lighting, and surreal conceptual forms. My work explores the boundaries between texture, volume, and emotion. As well as themes that relate to my writing.
   </div>
@@ -176,18 +176,15 @@
 
 <!-- 3. The Interactive Logic (JavaScript) -->
 <script>
-  document.getElementById('toggleBioLink').addEventListener('click', function(e) {
-    e.preventDefault(); 
+  document.getElementById('toggleBioLink').addEventListener('click', function() {
     var bioContainer = document.getElementById('bioTextContainer');
     
     if (bioContainer.style.display === 'none') {
       bioContainer.style.display = 'block';
-      this.textContent = '❌ Hide Artist Statement';
-      this.style.backgroundColor = 'rgba(255, 255, 255, 0.4)';
+      this.innerHTML = '❌ Hide Artist Statement';
     } else {
       bioContainer.style.display = 'none';
-      this.textContent = '✨ Tap here to read my Artist Statement';
-      this.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
+      this.innerHTML = '✨ Tap here to read my Artist Statement';
     }
   });
 </script>
@@ -195,15 +192,13 @@
 <!-- 4. The CSS Animation and Hover Effects -->
 <style>
   #toggleBioLink:hover {
-    background-color: rgba(255, 255, 255, 0.4) !important;
-    transform: scale(1.05);
+    opacity: 0.8;
   }
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-5px); }
     to { opacity: 1; transform: translateY(0); }
   }
 </style>
-
 
     <!-- Main Gallery Section -->
     <section class="gallery-section">
