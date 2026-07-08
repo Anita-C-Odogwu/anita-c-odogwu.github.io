@@ -161,15 +161,15 @@
         <a href="gallery.html">Art Gallery</a>
     </nav>
 
-<!-- 1. The Interactive Trigger Link -->
+<!-- 1. The Interactive Trigger Button -->
 <div style="text-align: center; max-width: 600px; margin: 25px auto 0 auto; padding: 10px;">
-  <a href="#" id="toggleBioLink" style="color: #ffffff; text-decoration: underline; cursor: pointer; font-size: 1.2rem; font-weight: bold; display: inline-block; margin-bottom: 15px;">
+  <button id="toggleBioLink" style="background-color: rgba(255, 255, 255, 0.2); color: #ffffff; border: 2px solid #ffffff; padding: 12px 24px; font-size: 1.1rem; font-weight: bold; border-radius: 25px; cursor: pointer; transition: all 0.3s ease; backdrop-filter: blur(5px); box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
     ✨ Tap here to read my Artist Statement
-  </a>
+  </button>
 
   <!-- 2. The Bio Text (Hidden by default) -->
-  <div id="bioTextContainer" style="display: none; animation: fadeIn 0.4s ease; text-align: center; color: #ffffff; font-size: 1.1rem; line-height: 1.6; margin-top: 10px;">
-    ARTIST STATEMENT<br><br>
+  <div id="bioTextContainer" style="display: none; animation: fadeIn 0.4s ease; text-align: center; color: #ffffff; font-size: 1.1rem; line-height: 1.6; margin-top: 20px; background-color: rgba(0, 0, 0, 0.2); padding: 20px; border-radius: 15px;">
+    <strong>ARTIST STATEMENT</strong><br><br>
     I am a multimedia creative focusing on hyper-realistic graphite studies, high-contrast lighting, and surreal conceptual forms. My work explores the boundaries between texture, volume, and emotion. As well as themes that relate to my writing.
   </div>
 </div>
@@ -183,15 +183,21 @@
     if (bioContainer.style.display === 'none') {
       bioContainer.style.display = 'block';
       this.textContent = '❌ Hide Artist Statement';
+      this.style.backgroundColor = 'rgba(255, 255, 255, 0.4)';
     } else {
       bioContainer.style.display = 'none';
       this.textContent = '✨ Tap here to read my Artist Statement';
+      this.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
     }
   });
 </script>
 
-<!-- 4. The CSS Animation (Kept right here in your HTML) -->
+<!-- 4. The CSS Animation and Hover Effects -->
 <style>
+  #toggleBioLink:hover {
+    background-color: rgba(255, 255, 255, 0.4) !important;
+    transform: scale(1.05);
+  }
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-5px); }
     to { opacity: 1; transform: translateY(0); }
