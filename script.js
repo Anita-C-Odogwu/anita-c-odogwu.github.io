@@ -31,12 +31,10 @@ poems[currentIndex].classList.add("active");
     }
 
     prevBtn.addEventListener("click", () => {
-        alert("Previous clicked");
         showPoem(currentIndex - 1);
     });
 
     nextBtn.addEventListener("click", () => {
-        alert("Next clicked");
         showPoem(currentIndex + 1);
     });
 });
