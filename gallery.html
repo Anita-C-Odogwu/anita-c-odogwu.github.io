@@ -16,19 +16,6 @@
     <link rel="icon" type="image/png" href="https://i.postimg.cc/k5PKdrwZ/Screenshot-2026-06-14-6-55-30-PM.png">
     
     <link rel="stylesheet" href="style.css">
-    
-<!--Cursive handwriting font -->
-<link href="https://googleapis.com" rel="stylesheet">
-
-<!-- 2. bio to appear on your page -->
-<div style="max-width: 600px; margin: 2.5rem auto; text-align: center; padding: 0 1rem;">
-    <h2 style="font-size: 1.1rem; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem; font-family: sans-serif;">Artist Statement</h2>
-    <p style="font-family: 'Alex Brush', cursive; font-size: 1.85rem; color: #ffffff; line-height: 1.3; letter-spacing: 0.03em;">
-I am a multimedia creative focusing on hyper-realistic graphite studies, high-contrast lighting, and surreal conceptual forms. My work explores the boundaries between texture, volume, and emotion. 
-As well as themes that relate to my writing.
-    </p>
-</div>
-
 
     <!-- Gallery Grid Specific Layout Styling -->
     <style>
@@ -173,6 +160,44 @@ As well as themes that relate to my writing.
         <a href="index.html#contact-booking">Bookings</a>
         <a href="gallery.html">Art Gallery</a>
     </nav>
+
+<!-- 1. The Interactive Trigger Link -->
+<div style="text-align: center; max-width: 600px; margin: 25px auto 0 auto; padding: 10px;">
+  <a href="#" id="toggleBioLink" style="color: #ffffff; text-decoration: underline; cursor: pointer; font-size: 1.2rem; font-weight: bold; display: inline-block; margin-bottom: 15px;">
+    ✨ Tap here to read my Artist Statement
+  </a>
+
+  <!-- 2. The Bio Text (Hidden by default) -->
+  <div id="bioTextContainer" style="display: none; animation: fadeIn 0.4s ease; text-align: center; color: #ffffff; font-size: 1.1rem; line-height: 1.6; margin-top: 10px;">
+    ARTIST STATEMENT<br><br>
+    I am a multimedia creative focusing on hyper-realistic graphite studies, high-contrast lighting, and surreal conceptual forms. My work explores the boundaries between texture, volume, and emotion. As well as themes that relate to my writing.
+  </div>
+</div>
+
+<!-- 3. The Interactive Logic (JavaScript) -->
+<script>
+  document.getElementById('toggleBioLink').addEventListener('click', function(e) {
+    e.preventDefault(); 
+    var bioContainer = document.getElementById('bioTextContainer');
+    
+    if (bioContainer.style.display === 'none') {
+      bioContainer.style.display = 'block';
+      this.textContent = '❌ Hide Artist Statement';
+    } else {
+      bioContainer.style.display = 'none';
+      this.textContent = '✨ Tap here to read my Artist Statement';
+    }
+  });
+</script>
+
+<!-- 4. The CSS Animation (Kept right here in your HTML) -->
+<style>
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+
 
     <!-- Main Gallery Section -->
     <section class="gallery-section">
