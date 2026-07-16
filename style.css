@@ -182,3 +182,10 @@ footer { text-align: center; padding: 20px; font-family: 'Poppins', sans-serif; 
   background-color: #555; 
   transform: scale(1.1); 
 }
+/* This locks my poetry and text from being selected or copied */
+p, h1, h2, h3, li {
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none;    /* Firefox */
+  -ms-user-select: none;     /* IE/Edge */
+  user-select: none;         /* Standard modern browsers */
+}
