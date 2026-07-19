@@ -25,6 +25,7 @@
     </style>
 </head>
 <body>
+<button id="darkModeToggle" class="mode-btn">🌙 Dark Mode</button>
 
     <!-- Navigation Bar -->
     <nav class="top-nav">
@@ -731,6 +732,23 @@ It is a signature of our future.
         behavior: "smooth"
       });
     };
+
+  const toggleBtn = document.getElementById('darkModeToggle');
+  
+  toggleBtn.addEventListener('click', () => {
+    // Check what the current theme is
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    
+    if (currentTheme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'light');
+      toggleBtn.textContent = '🌙 Dark Mode';
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      toggleBtn.textContent = '☀️ Light Mode';
+    }
+  });
+
+
     </script>
 </body>
 </html>
