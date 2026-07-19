@@ -733,22 +733,51 @@ It is a signature of our future.
       });
     };
 
-  const toggleBtn = document.getElementById('darkModeToggle');
+<!-- Safe Auto-Generated Toggle Script -->
+<script>
+  // This automatically builds your button so you don't need manual HTML
+  const modeBtn = document.createElement('button');
+  modeBtn.textContent = '🌙 Dark Mode';
   
-  toggleBtn.addEventListener('click', () => {
-    // Check what the current theme is
+  // This styles the button to float in the top-right corner
+  Object.assign(modeBtn.style, {
+    position: 'fixed',
+    top: '20px',
+    right: '20px',
+    zIndex: '99999', 
+    padding: '10px 16px',
+    cursor: 'pointer',
+    borderRadius: '20px',
+    border: '2px solid #1a1a1a',
+    backgroundColor: '#ffffff',
+    color: '#1a1a1a',
+    fontWeight: 'bold',
+    fontFamily: 'sans-serif',
+    boxShadow: '0px 4px 10px rgba(0,0,0,0.15)'
+  });
+
+  document.body.appendChild(modeBtn);
+  
+  // This switches the theme when clicked
+  modeBtn.addEventListener('click', () => {
     const currentTheme = document.documentElement.getAttribute('data-theme');
     
     if (currentTheme === 'dark') {
       document.documentElement.setAttribute('data-theme', 'light');
-      toggleBtn.textContent = '🌙 Dark Mode';
+      modeBtn.textContent = '🌙 Dark Mode';
+      modeBtn.style.backgroundColor = '#ffffff';
+      modeBtn.style.color = '#1a1a1a';
+      modeBtn.style.borderColor = '#1a1a1a';
     } else {
       document.documentElement.setAttribute('data-theme', 'dark');
-      toggleBtn.textContent = '☀️ Light Mode';
+      modeBtn.textContent = '☀️ Light Mode';
+      modeBtn.style.backgroundColor = '#1e1e1e';
+      modeBtn.style.color = '#f5f5f5';
+      modeBtn.style.borderColor = '#f5f5f5';
     }
   });
+</script>
 
-
-    </script>
+    
 </body>
 </html>
