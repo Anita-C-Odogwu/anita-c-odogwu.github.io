@@ -7,12 +7,14 @@
 <meta name="description" content="Official creative portfolio of Anita C. Odogwu, award-winning Sheffield youth poet and artist.">
 <meta name="keywords" content="Anita C Odogwu, Anita Odogwu, Sheffield poet, Black British poet, Year 8 artist">
     <!-- Google Fonts Links: Cinzel & Lora -->
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Cinzel:wght@600;700&family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
     <!-- Your Exact Feather Shortcut Icon Link -->
     <link rel="icon" type="image/png" href="https://i.postimg.cc/k5PKdrwZ/Screenshot-2026-06-14-6-55-30-PM.png">
+    <!-- Preload the small header badge to improve Largest Contentful Paint on mobile -->
+    <link rel="preload" as="image" href="https://i.postimg.cc/k5PKdrwZ/Screenshot-2026-06-14-6-55-30-PM.png">
     
     <link rel="stylesheet" href="style.css">
     
@@ -20,7 +22,7 @@
     <style>
         .tts-container { display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 20px; border-bottom: 2px dashed #d46a6a; padding-bottom: 10px; }
         .poem-title { border-bottom: none !important; margin-bottom: 0 !important; padding-bottom: 0 !important; }
-        .audio-btn { background: #7a3b5c; color: white; border: none; padding: 6px 14px; border-radius: 20px; font-family: 'Poppins', sans-serif; font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: background 0.2s; }
+        .audio-btn { background: #7a3b5c; color: white; border: none; padding: 6px 14px; border-radius: 20px; font-family: 'Poppins', sans-serif; font-size: 0.85rem; font-weight: 600; cursor: pointer; }
         .audio-btn:hover { background: #2c1a30; }
     </style>
     <meta name="google-site-verification" content="FDFG-nxyPa4JazlRKONI36hJoSCdMX6o3O6Hkx1F7kQ" />
@@ -39,7 +41,7 @@
     <header class="main-header">
         <h1>Anita C Odogwu</h1>
         <p class="subtitle">(Writing & Art Collection)</p>
-        <img src="https://i.postimg.cc/k5PKdrwZ/Screenshot-2026-06-14-6-55-30-PM.png" alt="Poetry Feather Badge" class="header-feather">
+        <img src="https://i.postimg.cc/k5PKdrwZ/Screenshot-2026-06-14-6-55-30-PM.png" alt="Poetry Feather Badge" class="header-feather" width="120" height="120" loading="eager" decoding="async">
     </header>
 
     <!-- About Biography Box Segment -->
@@ -48,14 +50,14 @@
         <p>Welcome to my official creative writing space. I am an award-winning Sheffield poet dedicated to exploring history, identity, and culture through verse. </p>
 <!--Write Up Page link-->
 <div style="text-align: center; margin: 40px 0;">
-    <a href="story.html" style="display: inline-block; padding: 10px 22px; background-color: #3d0337; color: #fff; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: background 0.2s;">
+    <a href="story.html" style="display: inline-block; padding: 10px 22px; background-color: #3d0337; color: #fff; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 1rem; box-shadow: 0 6px 18px rgba(0,0,0,0.25);"> 
         Read My Collection of Short Stories & Writing →
     </a>
 </div>
   
         <!-- Hidden Biography Extension -->
         <div id="extended-bio" style="display: none; margin-top: 15px;">
-            <p>Anita C. Odogwu is an award-winning Black British young poet and performer based in Sheffield, South Yorkshire, whose writing deeply explores identity, culture, and her rich heritage. Born in Lagos State, Nigeria, and now living in England, her distinct literary talent has quickly gained widespread recognition.As a secondary school student, Anita's poetic voice emerged with striking clarity when she claimed both the Gold and Silver medals in the prestigious Sheffield Young Poets Award Competition. Sweeping the Key Stage 3 category with her moving entries, "Black? British? Both?" and "My History Is My Pride," she highlighted a sophisticated grasp of history and identity well beyond her years.A celebrated voice within the community, Anita continues to represent the next generation of creative talent in South Yorkshire, recently returning to Sheffield Town Hall by special invitation to perform her acclaimed poetry in person. Supported proudly by her family, her work serves as a powerful testament to the beauty of celebrating one's roots.</p> 
+            <p>Anita C. Odogwu is an award-winning Black British young poet and performer based in Sheffield, South Yorkshire, whose writing deeply explores identity, culture, and her rich heritage. She performs at schools and local events and creates visual art and writing that aims to spark thoughtful conversation.</p>
             
             <p style="margin-top: 15px;">The poems are available to read below.</p>
             
@@ -305,6 +307,7 @@ And that is how Onwumbiko,
 Cheated.
    The.
     One.
+ One.
  Cheated.
  Others.</p>
                     <a href="https://forms.gle/SNFbLCS8TceoYxSm7" target="_blank" class="comment-trigger-btn">💬 Comment on this Poem</a>
@@ -583,13 +586,13 @@ It is a signature of our future.
                 </div>
             </article>
            <!-- CARD 10 -  -->
-            <article class="poem-card">
-                <div class="tts-container">
-                    <h2 class="poem-title">Right to Me</h2>
-                    <button class="audio-btn" onclick="speakPoem(this)">🔊 Listen</button>
-                </div>
-                <div class="poem-body">
-                    <p>
+             <article class="poem-card">
+                 <div class="tts-container">
+                     <h2 class="poem-title">Right to Me</h2>
+                     <button class="audio-btn" onclick="speakPoem(this)">🔊 Listen</button>
+                 </div>
+                 <div class="poem-body">
+                     <p>
   One room,
   Two worlds,
   One person,
@@ -603,7 +606,7 @@ It is a signature of our future.
   And laugh at, and mock.
   My name is my identity.
   All I want is sincerity,
-  All I need is tranquility.
+  All I need is tranquility,
   All I want is serenity,
   All I need is loyalty,
 
@@ -648,7 +651,7 @@ It is a signature of our future.
             <a href="https://forms.gle/nzGoT9SRGxYj8Dmu5" target="_blank" class="ideas-trigger-btn">💭 Suggest a Topic</a>
             
             <h4 style="font-family: 'Playfair Display', serif; color: #4a2333; margin-top: 35px; margin-bottom: 10px; font-size: 1.25rem;">Live Shared Feed Log</h4>
-            <iframe src="https://docs.google.com/spreadsheets/d/1K4iB2vth_ZrmW4388-z8HMIV_1n_C-yU87Ql4LnlmEs/preview" width="100%" height="450" style="border:2px solid #4a2333; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"></iframe>
+            <iframe src="https://docs.google.com/spreadsheets/d/1K4iB2vth_ZrmW4388-z8HMIV_1n_C-yU87Ql4LnlmEs/preview" width="100%" height="450" style="border:2px solid #4a2333; border-radius: 8px;" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </section>
     <!-- 📞 OFFICIAL BUSINESS & BOOKINGS CONTACT BOX 📞 -->
@@ -658,7 +661,7 @@ It is a signature of our future.
             <p class="section-desc" style="font-size: 1rem; line-height: 1.6; color: #2c1a30; margin-bottom: 15px; font-family: 'Poppins', sans-serif;">
                 For bookings, school workshops, festival appearances, custom art requests, or media inquiries, please contact Anita's management team directly at:
             </p>
-          <a href="mailto:odogwu.anita@gmail.com" style="display: inline-block; background: #2c1a30; color: #ffffff; padding: 12px 25px; border-radius: 12px; font-family: 'Poppins', sans-serif; font-weight: 600; text-decoration: none; font-size: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: background 0.2s;">
+          <a href="mailto:odogwu.anita@gmail.com" style="display: inline-block; background: #2c1a30; color: #ffffff; padding: 12px 25px; border-radius: 12px; font-family: 'Poppins', sans-serif; font-weight: 600; text-decoration: none;"> 
     ✉️ Email Management
 </a>
         </div>
@@ -674,7 +677,7 @@ It is a signature of our future.
     <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
 
     <!-- Scripts -->
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     
     <script>
     function toggleBio() {
