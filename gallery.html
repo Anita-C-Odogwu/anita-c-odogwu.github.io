@@ -8,9 +8,9 @@
 <meta name="keywords" content="Anita C Odogwu, Anita Odogwu, Sheffield poet, Black British poet, artist, young, reference">
     
     <!-- Google Fonts Links: Cinzel, Lora, & Poppins -->
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
  
     <!-- Fixed Glowing Feather Favicon Direct Link -->
     <link rel="icon" type="image/png" href="https://i.postimg.cc/k5PKdrwZ/Screenshot-2026-06-14-6-55-30-PM.png">
@@ -61,7 +61,7 @@
         
         .art-card h3 { font-family: 'Cinzel', serif; color: #2c1a30; font-size: 1.2rem; margin: 15px 0 5px 0; }
         .art-card p { font-family: 'Lora', serif; color: #666; font-size: 0.95rem; font-style: italic; margin: 0; }
-        .back-home { margin-top: 40px; display: inline-block; background: #7a3b5c; color: white; padding: 8px 20px; border-radius: 20px; text-decoration: none; font-family: 'Poppins', sans-serif; font-size: 0.9rem; transition: background 0.2s; }
+        .back-home { margin-top: 40px; display: inline-block; background: #7a3b5c; color: white; padding: 8px 20px; border-radius: 20px; text-decoration: none; font-family: 'Poppins', sans-serif; }
         .back-home:hover { background: #2c1a30; }
         
         /* Footer Styling */
@@ -161,47 +161,47 @@
         <a href="gallery.html">Art Gallery</a>
     </nav>
 
-<!-- 1. The Fixed Interactive Button -->
-<div style="text-align: center; max-width: 600px; margin: 25px auto 0 auto; padding: 10px; clear: both;">
-  <button id="toggleBioButton" type="button" style="display: inline-block !important; background-color: rgba(255, 255, 255, 0.25) !important; color: #ffffff !important; text-decoration: none !important; border: 2px solid #ffffff !important; padding: 12px 24px !important; font-size: 1.1rem !important; font-weight: bold !important; border-radius: 25px !important; cursor: pointer !important; transition: all 0.3s ease !important; backdrop-filter: blur(5px) !important; box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important; -webkit-appearance: none !important; appearance: none !important;">
-    ✨ Tap here to read my Artist Statement
-  </button>
+ <!-- 1. The Fixed Interactive Button -->
+ <div style="text-align: center; max-width: 600px; margin: 25px auto 0 auto; padding: 10px; clear: both;">
+   <button id="toggleBioButton" type="button" style="display: inline-block !important; background-color: rgba(255, 255, 255, 0.25) !important; color: #ffffff !important; text-decoration: none !important; padding: 12px 18px !important; border-radius: 18px !important; border: none; font-family: 'Poppins', sans-serif; font-weight: 600; cursor: pointer;"> 
+     ✨ Tap here to read my Artist Statement
+   </button>
 
-  <!-- 2. The Bio Text (Hidden by default) -->
-  <div id="bioTextContainer" style="display: none; animation: fadeIn 0.4s ease; text-align: center; color: #ffffff; font-size: 1.1rem; line-height: 1.6; margin-top: 20px; background-color: rgba(0, 0, 0, 0.2); padding: 20px; border-radius: 15px;">
-    <strong> <u>ARTIST STATEMENT</u></strong><br><br>
-    I am a multimedia creative focusing on hyper-realistic graphite studies, high-contrast lighting, and surreal conceptual forms. My work explores the boundaries between texture, volume, and emotion. As well as themes that relate to my writing.
-  </div>
-</div>
+   <!-- 2. The Bio Text (Hidden by default) -->
+   <div id="bioTextContainer" style="display: none; animation: fadeIn 0.4s ease; text-align: center; color: #ffffff; font-size: 1.1rem; line-height: 1.6; margin-top: 20px; background-color: rgba(0,0,0,0.15); padding: 14px; border-radius: 8px;">
+     <strong> <u>ARTIST STATEMENT</u></strong><br><br>
+     I am a multimedia creative focusing on hyper-realistic graphite studies, high-contrast lighting, and surreal conceptual forms. My work explores the boundaries between texture, volume, and emotion.
+   </div>
+ </div>
 
-<!-- 3. The Interactive Logic (JavaScript) -->
-<script>
-  document.getElementById('toggleBioButton').addEventListener('click', function(e) {
-    e.preventDefault(); 
-    var bioContainer = document.getElementById('bioTextContainer');
-    
-    if (bioContainer.style.display === 'none') {
-      bioContainer.style.display = 'block';
-      this.textContent = '❌ Hide Artist Statement';
-    } else {
-      bioContainer.style.display = 'none';
-      this.textContent = '✨ Tap here to read my Artist Statement';
-    }
-  });
-</script>
+ <!-- 3. The Interactive Logic (JavaScript) -->
+ <script>
+   document.getElementById('toggleBioButton').addEventListener('click', function(e) {
+     e.preventDefault(); 
+     var bioContainer = document.getElementById('bioTextContainer');
+     
+     if (bioContainer.style.display === 'none') {
+       bioContainer.style.display = 'block';
+       this.textContent = '❌ Hide Artist Statement';
+     } else {
+       bioContainer.style.display = 'none';
+       this.textContent = '✨ Tap here to read my Artist Statement';
+     }
+   });
+ </script>
 
-<!-- 4. The CSS Animation and Hover State -->
-<style>
-  #toggleBioButton:hover {
-    background-color: rgba(109, 1, 76, 0.624) !important;
-    transform: scale(1.05) !important;
-    text-decoration: none !important;
-  }
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-5px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-</style>
+ <!-- 4. The CSS Animation and Hover State -->
+ <style>
+   #toggleBioButton:hover {
+     background-color: rgba(109, 1, 76, 0.624) !important;
+     transform: scale(1.05) !important;
+     text-decoration: none !important;
+   }
+   @keyframes fadeIn {
+     from { opacity: 0; transform: translateY(-5px); }
+     to { opacity: 1; transform: translateY(0); }
+   }
+ </style>
 
 
     <!-- Main Gallery Section -->
@@ -214,11 +214,11 @@
             <div class="art-card">
                 <div class="comparison-container">
                     <div class="image-box">
-                        <img src="Reference/audrey-ref.jpg" alt="Audrey Hepburn Reference Photo" class="zoomable">
+                        <img loading="lazy" decoding="async" src="Reference/audrey-ref.jpg" alt="Audrey Hepburn Reference Photo" class="zoomable">
                         <div class="image-label">Ref</div>
                     </div>
                     <div class="image-box">
-                        <img src="Finished Drawings/audrey.jpg" alt="Hyper-realistic graphite portrait study of Audrey Hepburn by Anita C. Odogwu" class="zoomable">
+                        <img loading="lazy" decoding="async" src="Finished Drawings/audrey.jpg" alt="Hyper-realistic graphite portrait study of Audrey Hepburn by Anita C. Odogwu" class="zoomable">
                         <div class="image-label">Finished Drawing</div>
                     </div>
                 </div>
@@ -230,11 +230,11 @@
             <div class="art-card">
                 <div class="comparison-container">
                     <div class="image-box">
-                        <img src="Reference/chadwick-ref.jpg" alt="Chadwick Boseman Reference Photo" class="zoomable">
+                        <img loading="lazy" decoding="async" src="Reference/chadwick-ref.jpg" alt="Chadwick Boseman Reference Photo" class="zoomable">
                         <div class="image-label">Ref</div>
                     </div>
                     <div class="image-box">
-                        <img src="Finished Drawings/chadwick.jpg" alt="High-contrast graphite studio lighting portrait of Chadwick Boseman by Anita C. Odogwu" class="zoomable">
+                        <img loading="lazy" decoding="async" src="Finished Drawings/chadwick.jpg" alt="High-contrast graphite studio lighting portrait of Chadwick Boseman by Anita C. Odogwu" class="zoomable">
                         <div class="image-label">Finished Drawing</div>
                     </div>
                 </div>
@@ -245,7 +245,7 @@
             <div class="art-card">
                 <div class="comparison-container">
                     <div class="image-box">
-                        <img src="Finished Drawings/rose.jpg" alt="Detailed graphite shading study of a rose with natural textures by Anita C. Odogwu" class="zoomable">
+                        <img loading="lazy" decoding="async" src="Finished Drawings/rose.jpg" alt="Detailed graphite shading study of a rose with natural textures by Anita C. Odogwu" class="zoomable">
                         <div class="image-label">Finished Drawing</div>
                     </div>
                 </div>
@@ -257,11 +257,11 @@
             <div class="art-card">
                 <div class="comparison-container">
                     <div class="image-box">
-                        <img src="Reference/mlk-ref.jpg" alt="Martin Luther King Jr. Reference Photo" class="zoomable">
+                        <img loading="lazy" decoding="async" src="Reference/mlk-ref.jpg" alt="Martin Luther King Jr. Reference Photo" class="zoomable">
                         <div class="image-label">Ref</div>
                     </div>
                     <div class="image-box">
-                        <img src="Finished Drawings/mlk.jpg" alt="Hyper-realistic graphite and blending stump portrait of Martin Luther King Jr by Anita C. Odogwu" class="zoomable">
+                        <img loading="lazy" decoding="async" src="Finished Drawings/mlk.jpg" alt="Hyper-realistic graphite and blending stump portrait of Martin Luther King Jr by Anita C. Odogwu" class="zoomable">
                         <div class="image-label">Finished Drawing</div>
                     </div>
                 </div>
@@ -273,7 +273,7 @@
             <div class="art-card">
                 <div class="comparison-container">
                     <div class="image-box">
-                        <img src="Finished Drawings/cherries.jpg" alt="Vibrant oil pencil blending study of a pair of cherries on paper by Anita C. Odogwu" class="zoomable">
+                        <img loading="lazy" decoding="async" src="Finished Drawings/cherries.jpg" alt="Vibrant oil pencil blending study of a pair of cherries on paper by Anita C. Odogwu" class="zoomable">
                         <div class="image-label">Finished Drawing</div>
                     </div>
                 </div>
@@ -285,7 +285,7 @@
             <div class="art-card">
                 <div class="comparison-container">
                     <div class="image-box">
-                        <img src="Finished Drawings/hands.jpg" alt="Oil pencil drawing of praying hands set against a watercolor background by Anita C. Odogwu" class="zoomable">
+                        <img loading="lazy" decoding="async" src="Finished Drawings/hands.jpg" alt="Oil pencil drawing of praying hands set against a watercolor background by Anita C. Odogwu" class="zoomable">
                         <div class="image-label">Finished Drawing</div>
                     </div>
                 </div>
@@ -297,7 +297,7 @@
             <div class="art-card">
                 <div class="comparison-container">
                     <div class="image-box">
-                        <img src="Finished Drawings/hand.jpg" alt="Surreal graphite drawing of a human palm with conceptual tree branches for paml creases by Anita C. Odogwu" class="zoomable">
+                        <img loading="lazy" decoding="async" src="Finished Drawings/hand.jpg" alt="Surreal graphite drawing of a human palm with conceptual tree branches for paml creases by Anita C. Odogwu" class="zoomable">
                         <div class="image-label">Finished Drawing</div>
                     </div>
                 </div>
@@ -312,7 +312,7 @@
 <div class="art-card">
     <div class="comparison-container">
         <div class="image-box">
-            <img src="Finished Drawings/condensation.jpg" alt="High-contrast graphite study of metallic textures and fluid condensation highlights by Anita C. Odogwu" class="zoomable">
+            <img loading="lazy" decoding="async" src="Finished Drawings/condensation.jpg" alt="High-contrast graphite study of metallic textures and fluid condensation highlights by Anita C. Odogwu" class="zoomable">
             <div class="image-label">Finished Drawing</div>
         </div>
     </div>
@@ -326,7 +326,7 @@
 <div class="art-card">
     <div class="comparison-container">
         <div class="image-box">
-            <img src="Finished Drawings/bubbles.jpg" alt="Technical graphite drawing exploring dual textures and high contrast liquid droplets by Anita C. Odogwu" class="zoomable">
+            <img loading="lazy" decoding="async" src="Finished Drawings/bubbles.jpg" alt="Technical graphite drawing exploring dual textures and high contrast liquid droplets by Anita C. Odogwu" class="zoomable">
             <div class="image-label">Finished Drawing</div>
         </div>
     </div>
@@ -338,7 +338,7 @@
 <div class="art-card">
     <div class="comparison-container">
         <div class="image-box">
-            <img src="Finished Drawings/sunset.jpg" alt="Circular coastal landscape pencil study capturing a tranquil sunset and water reflections by Anita C. Odogwu" class="zoomable">
+            <img loading="lazy" decoding="async" src="Finished Drawings/sunset.jpg" alt="Circular coastal landscape pencil study capturing a tranquil sunset and water reflections by Anita C. Odogwu" class="zoomable">
             <div class="image-label">Finished Drawing</div>
         </div>
     </div>
@@ -350,7 +350,7 @@
 <div class="art-card">
     <div class="comparison-container">
         <div class="image-box">
-            <img src="Finished Drawings/lightbulb.jpg" alt="Oil pencil on black paper artificial light technical study by Anita C. Odogwu" class="zoomable">
+            <img loading="lazy" decoding="async" src="Finished Drawings/lightbulb.jpg" alt="Oil pencil on black paper artificial light technical study by Anita C. Odogwu" class="zoomable">
             <div class="image-label">Finished Drawing</div>
         </div>
     </div>
@@ -362,7 +362,7 @@
 <div class="art-card">
     <div class="comparison-container">
         <div class="image-box">
-            <img src="Finished Drawings/dripping.jpg" alt="Surreal graphite drawing of a hand melting and dissolving into a quiet pool of fluid motion by Anita C. Odogwu" class="zoomable">
+            <img loading="lazy" decoding="async" src="Finished Drawings/dripping.jpg" alt="Surreal graphite drawing of a hand melting and dissolving into a quiet pool of fluid motion by Anita C. Odogwu" class="zoomable">
             <div class="image-label">Finished Drawing</div>
         </div>
     </div>
@@ -374,13 +374,12 @@
 <div class="art-card">
     <div class="comparison-container">
         <div class="image-box">
-            <img src="Finished Drawings/jellyfish.jpg" alt="Mixed-media oil pencil and watercolor jellyfish art by Anita C. Odogwu" class="zoomable">
+            <img loading="lazy" decoding="async" src="Finished Drawings/jellyfish.jpg" alt="Mixed-media oil pencil and watercolor jellyfish art by Anita C. Odogwu" class="zoomable">
             <div class="image-label">Finished Drawing</div>
         </div>
     </div>
     <h3>Bioluminescent Drift</h3>
     <p>An unblended mixed-media study of deep-ocean wildlife. Features a crisp oil pencil jellyfish and floating bubbles, set against a soft, faded watercolour halo and black paper background.</p>
-</div>
            
 
         </div>
@@ -406,7 +405,8 @@
 
         zoomableImages.forEach(image => {
             image.addEventListener('click', () => {
-                lightboxImg.src = image.src;
+                // When using lazy images, set lightbox src to the natural srcset if available
+                lightboxImg.src = image.currentSrc || image.src;
                 lightboxImg.alt = image.alt;
                 lightbox.classList.add('active');
             });
