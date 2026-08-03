@@ -1,0 +1,24 @@
+  - name: Install ImageMagick
+    run: sudo apt-get update && sudo apt-get install -y imagemagick
+
+  - name: Ensure script is executable
+    run: chmod +x .github/scripts/convert-images.sh || true
+
+  - name: Run conversion script
+    run: ./.github/scripts/convert-images.sh
+
+  - name: List created optimized files
+    run: ls -R optimized-images || true
+
+  - name: Create pull request with optimized images
+    uses: peter-evans/create-pull-request@v5
+    with:
+      token: ${{ secrets.GITHUB_TOKEN }}
+      commit-message: "Add optimized images (webp) [ci skip]"
+      branch: optimized-images-${{ github.run_id }}
+      title: "Add optimized images (auto)"
+      body: |
+        This PR adds optimized and watermarked WebP copies generated automatically.
+      base: main
+      labels: auto-generated, optimize-images
+      path: optimized-images
