@@ -26,8 +26,8 @@ process_file() {
 
   echo "Processing: $f -> $out_webp_wm"
 
-  # Resize and convert to webp
-  magick "$f" -strip -resize "${MAX_WIDTH}x${MAX_WIDTH}>" -quality ${QUALITY} "$out_webp"
+  # Resize and convert to webp; auto-orient first so rotated images keep correct orientation
+  magick "$f" -auto-orient -strip -resize "${MAX_WIDTH}x${MAX_WIDTH}>" -quality ${QUALITY} "$out_webp"
 
   # Create a rotated watermark image (transparent background) sized relative to source width
   # We'll create a watermark canvas and then composite it onto the image bottom-right
