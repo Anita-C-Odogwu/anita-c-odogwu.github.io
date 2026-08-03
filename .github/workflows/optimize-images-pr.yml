@@ -20,8 +20,33 @@ jobs:
         with:
           persist-credentials: true
 
-      - name: Install ImageMagick
-        run: sudo apt-get update && sudo apt-get install -y imagemagick
+      - name: Install ImageMagick and ensure magick is available
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y imagemagick
+          # If magick isn't available but convert is, create a small shim so scripts using "magick" still work
+          if ! command -v magick >/dev/null 2>&1 ; then
+            if command -v convert >/dev/null 2>&1 ; then
+              echo "magick not found — creating shim to call convert"
+              sudo bash -c 'cat > /usr/local/bin/magick <<'"'"'SH'"'"'
+#!/bin/sh
+exec convert "$@"
+SH
+'
+              sudo chmod +x /usr/local/bin/magick
+            else
+              echo "ERROR: neither magick nor convert found after installing imagemagick"
+              exit 1
+            fi
+          else
+            echo "magick found at: $(command -v magick)"
+          fi
+
+      - name: Diagnostic: report ImageMagick binaries
+        run: |
+          echo "which magick: $(command -v magick || true)"
+          echo "which convert: $(command -v convert || true)"
+          magick -version || convert -version || true
 
       - name: Ensure script is executable
         run: chmod +x .github/scripts/convert-images.sh || true
